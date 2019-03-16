@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1.Json学习  Json是一种数据格式，没有属性也没有方法。是对象  Json对象可以和字符串进行转换。  Json转换成字符串。 Json.paren(Json),返回的是一个Json对象  Json对象使用Json.stringify(Json对象),返回一个字符串 2.请求Json数据  建立变量保存要访问的网址,例如：var requestUrl = ‘网址’  创建Http请求，va">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-15T03:38:43.136Z">
+<meta property="og:updated_time" content="2019-03-15T08:41:19.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3.15">
 <meta name="twitter:description" content="1.Json学习  Json是一种数据格式，没有属性也没有方法。是对象  Json对象可以和字符串进行转换。  Json转换成字符串。 Json.paren(Json),返回的是一个Json对象  Json对象使用Json.stringify(Json对象),返回一个字符串 2.请求Json数据  建立变量保存要访问的网址,例如：var requestUrl = ‘网址’  创建Http请求，va">
@@ -369,7 +369,38 @@ myArticle.appendChild(myList);
 
 section.appendChild(myArticle);
 </code></pre><p>  }<br>}</p>
+<p>4.JS构造函数的继承方法<br>  function Animal() {        function Cat() {this.name = name}<br>  this.species = ‘动物’<br>}</p>
+<p>  (1 构造函数绑定继承<br>    把子类的this对象传到Animal方法中，然后将父类的属性绑定到子类的this中</p>
+<pre><code>Animal.apply(this, arguments)
 
+funtion Cat(name,color) {
+   Animal.apply(this, arguments)
+   this,name = name
+   this.color = color
+}
+var cat1 = new Cat(&apos;mao&apos;,&apos;red&apos;)
+alert(cat1.species)
+
+(2 prototype模式(常用)
+  Cat.prototype = Animal.prototype
+  Cat.prototype.constructor = Cat
+  var cat1 = new Cat(&apos;&apos;,&apos;&apos;)
+  cat1.species
+
+(3 使用空对象作为中介
+  var F = function(){};
+  F.prototype = Animal.prototype;
+  Cat.prototype = new F();
+  Cat.prototype.constructor = Cat;
+
+(4 直接继承prototype
+
+  Cat.prototype = Animal.prototype
+  Cat.prototype.constructor = Cat
+  ......
+
+(5 拷贝继承，将要继承的属性和方法通过拷贝到子对象，完成继承
+</code></pre>
       
     </div>
     
@@ -402,6 +433,10 @@ section.appendChild(myArticle);
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/0730chen.github.io/2019/03/16/3-16/" rel="prev" title="3.16">
+                3.16 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -469,7 +504,7 @@ section.appendChild(myArticle);
               
                 <a href="/0730chen.github.io/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -491,7 +526,7 @@ section.appendChild(myArticle);
               
               <div class="site-state-item site-state-tags">
                 <a href="/0730chen.github.io/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
