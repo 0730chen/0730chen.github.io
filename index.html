@@ -269,6 +269,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/18/3-18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端菜鸟">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/03/18/3-18/" itemprop="url">3.18</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T22:18:33+08:00">
+                2019-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>JavaScipt对象与继承关系<br>1.构建构造函数<br>  function Foo(){}<br>2.创建实例对象<br>  var f = new Foo()<br>  var o = new Object()</p>
+<p>Foo.prototype与f.<strong>proto</strong>指向相同的构造函数F.<br>Foo.prototype.<strong>proto</strong>指向了Obejct.prototype<br>o.<strong>proto</strong>也指向了Object.prototype<br>instance-&gt;<strong>proto</strong>-&gt;person.prototype-&gt;constructor&lt;-person.prototype-&gt;function Person(){}-&gt;Object()-&gt;window</p>
+<p>3.继承<br>function Brick(){<br>    this.width = 10<br>    this.height =20<br>}<br>使用继承方式</p>
+<p>function BlueGlassBrick() {<br>    Brick.call(this)<br>    this.opacity = 0.5  添加的新属性<br>    this.color = ‘blue’<br>}<br>Brick.prototype.xxx = function(){<br>    给原型添加新方法<br>}</p>
+<p>新建的构建起BlueGlassBrick()默认有一个空的原型属性。<br>使BlueGlassBrick()构造器从Brick()中继承方法，使原型属性指向Brick.prototype的原型属性,使用Object的create方法创建一个和Brick.prototype相同的原型属性并赋值给新构造的空原型属性<br>BlueGlassBrick.prototype = Object.create(Brick.prototype)<br>这个时候BlueGlassBrick.prototype.constructor指向的是Brick()<br>然后在使BlueGlassBrick.prototype.constructor = BlueGlassBrick<br>var s = new BlueGlassBrick（）构建的s对象也有了xxx方法</p>
+<p>客户端储存</p>
+<p>1.cookies储存数据<br>2.Web storage<br>localStorage在浏览器中储存数据<br>localStorage.setItem(‘name’,’chris’)添加数据<br>Storage.getItem()接受一个参数并返回数据<br>localStroage.removeItem(‘’)接受一个参数并删除一组数据<br>关闭浏览器之后再打开也可以访问<br>sessionStorage为页面会话期间可用的每个给定源一个单独的储存区域，只要浏览器处于打开状态就会存在，浏览器关闭之后就会删除数据</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/16/3-16/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1425,134 +1551,6 @@ jQ.get(url, callback),$.post(url,data,callback)
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/02/26/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端菜鸟">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/02/26/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T22:17:45+08:00">
-                2019-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1603,7 +1601,7 @@ jQ.get(url, callback),$.post(url,data,callback)
               
                 <a href="/0730chen.github.io/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
