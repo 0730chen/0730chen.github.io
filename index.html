@@ -269,6 +269,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/21/3-2-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端菜鸟">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/03/21/3-2-1/" itemprop="url">3.2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T00:09:17+08:00">
+                2019-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.Swiper4的使用方法<br>  需要使用swiper.min.js文件与swiper.min.css文件，可以下载引入文件或者使用CDN链接<br>2.建立swiper-container容器，设定容器的宽和高,容器中包含3个页面</p>
+<div class="swiper-container"><br>    <div class="swiper-slide">1</div><br>    <div class="swiper-slide">2</div><br>    <div class="swiper-slide">3</div><br></div><br>//分页器<br><div class="swiper-pagination"><br><br></div><br>导航按钮<br><div class="swiper-button-prev"></div><br><div class="swiper-button-next"></div>
+
+<p>滚动条</p>
+<div class="swiper-scrollbar"></div>
+
+<p>例如swiper-container {width：xxx;height:xxx}</p>
+<p>3.初始化Swiper在<script>标签中</p>
+<p>var mySwiper = new Swiper(‘.swiper-container’,{<br>    direction = ‘vertica’,//垂直切换选项<br>    loop:true, //循环模式选项</p>
+<pre><code>//分页器
+paginatio:{
+    el:&apos;.swiper-pagination&apos;,
+}
+//前进后退按钮
+navigation: {
+    nextEl:&apos;.swiper-button-next&apos;,
+    prevEl:&apos;.swiper-button-prev&apos;,
+
+}
+
+//滚动条
+scrollbar:{
+    el:&apos;.swiper-scrollbar&apos;,
+},
+</code></pre><p>})<br>4.如果不写在Html文件后面，则在页面加载后初始化<br>将JavaScript代码写在页面加载完成后初始化<br>window.onload = function(){<br>    ……<br>}</p>
+<p>5.或者使用Jquery或Zepto<br>$(document).ready(function(){<br>    ……<br>})</p>
+<p>6.移动端使用Zepto.js主要是Jquery库有的内容Zepto都有，并且Zepto的大小更加轻便<br>  开发版的用于开发，在控制台会输出错误信息<br>  生产版在开发完成后可以使用生产办，它的体积更小</p>
+</script></p>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/18/3-18/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1431,126 +1577,6 @@ jQ.get(url, callback),$.post(url,data,callback)
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/02/26/post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端菜鸟">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/02/26/post/" itemprop="url">post</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T23:09:59+08:00">
-                2019-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>  今天的学习内容</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1601,7 +1627,7 @@ jQ.get(url, callback),$.post(url,data,callback)
               
                 <a href="/0730chen.github.io/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
