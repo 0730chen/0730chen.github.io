@@ -269,10 +269,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/04/05/4-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/04/05/4-5/" itemprop="url">4.5</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T20:14:55+08:00">
+                2019-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.webpack的使用总结<br>  需要安装node.js程序，并在命令行中输入 node -v 出现正确的版本号<br>  建立项目文件夹，并在命令行中进入项目文件 例如CD project<br>  初始化 npm init -y<br>  安装 webpack npm install webpack –save-dev<br>  安装 webpack-cli npm install webpack-cli –save-dev<br>  新建文件夹src，dist，src是存放静态资源的文件夹。并存在一个index.js文件，这是一个入口文件，里面是依赖文件及其静态资源的引用 根目录下存在index.html文件对打包后的文件进行引用<br>  使用命令 npx webpack进行打包， 或在package.json中进行配置文件配置依赖项，配置webpack的打包模式<br>  index.js中支持ES6语法，主要是处理依赖项<br>  webpack.config.js配置文件。 引用path静态资源包。 配置打包文件的入口和打包文件的输出文件及文件名<br>  处理图片<br>  下载css文件处理器， npm install style-loader css-loader –save-dev<br>  并在配置文件中配置 module：use{}<br>  下载图片处理器， npm install –save-dev file-name  配置option属性：{设置打包的文件输出文件，名字，打包格式}</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/21/3-21/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端菜鸟">
+      <meta itemprop="name" content="前端">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
     </span>
@@ -403,156 +523,10 @@ $(&apos;button&apos;).click(function(){ var val = $(this).attr(&apos;value&apos;
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/21/3-2-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端菜鸟">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/03/21/3-2-1/" itemprop="url">3.2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T00:09:17+08:00">
-                2019-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.Swiper4的使用方法<br>  需要使用swiper.min.js文件与swiper.min.css文件，可以下载引入文件或者使用CDN链接<br>2.建立swiper-container容器，设定容器的宽和高,容器中包含3个页面</p>
-<div class="swiper-container"><br>    <div class="swiper-slide">1</div><br>    <div class="swiper-slide">2</div><br>    <div class="swiper-slide">3</div><br></div><br>//分页器<br><div class="swiper-pagination"><br><br></div><br>导航按钮<br><div class="swiper-button-prev"></div><br><div class="swiper-button-next"></div>
-
-<p>滚动条</p>
-<div class="swiper-scrollbar"></div>
-
-<p>例如swiper-container {width：xxx;height:xxx}</p>
-<p>3.初始化Swiper在<script>标签中</p>
-<p>var mySwiper = new Swiper(‘.swiper-container’,{<br>    direction = ‘vertica’,//垂直切换选项<br>    loop:true, //循环模式选项</p>
-<pre><code>//分页器
-paginatio:{
-    el:&apos;.swiper-pagination&apos;,
-}
-//前进后退按钮
-navigation: {
-    nextEl:&apos;.swiper-button-next&apos;,
-    prevEl:&apos;.swiper-button-prev&apos;,
-
-}
-
-//滚动条
-scrollbar:{
-    el:&apos;.swiper-scrollbar&apos;,
-},
-</code></pre><p>})<br>4.如果不写在Html文件后面，则在页面加载后初始化<br>将JavaScript代码写在页面加载完成后初始化<br>window.onload = function(){<br>    ……<br>}</p>
-<p>5.或者使用Jquery或Zepto<br>$(document).ready(function(){<br>    ……<br>})</p>
-<p>6.移动端使用Zepto.js主要是Jquery库有的内容Zepto都有，并且Zepto的大小更加轻便<br>  开发版的用于开发，在控制台会输出错误信息<br>  生产版在开发完成后可以使用生产办，它的体积更小</p>
-</script></p>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/18/3-18/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端菜鸟">
+      <meta itemprop="name" content="前端">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
     </span>
@@ -678,7 +652,7 @@ scrollbar:{
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/16/3-16/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端菜鸟">
+      <meta itemprop="name" content="前端">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
     </span>
@@ -804,7 +778,7 @@ scrollbar:{
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/15/3-15/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端菜鸟">
+      <meta itemprop="name" content="前端">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
     </span>
@@ -984,7 +958,7 @@ alert(cat1.species)
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/14/3-14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端菜鸟">
+      <meta itemprop="name" content="前端">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
     </span>
@@ -1105,7 +1079,7 @@ alert(cat1.species)
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/11/3-11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端菜鸟">
+      <meta itemprop="name" content="前端">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
     </span>
@@ -1228,7 +1202,7 @@ alert(cat1.species)
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/04/3-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端菜鸟">
+      <meta itemprop="name" content="前端">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
     </span>
@@ -1349,7 +1323,7 @@ alert(cat1.species)
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/02/3-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端菜鸟">
+      <meta itemprop="name" content="前端">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
     </span>
@@ -1479,7 +1453,7 @@ alert(cat1.species)
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/02/28/Jquery学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端菜鸟">
+      <meta itemprop="name" content="前端">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
     </span>
@@ -1629,7 +1603,7 @@ jQ.get(url, callback),$.post(url,data,callback)
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">前端菜鸟</p>
+              <p class="site-author-name" itemprop="name">前端</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -1640,7 +1614,7 @@ jQ.get(url, callback),$.post(url,data,callback)
               
                 <a href="/0730chen.github.io/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1662,7 +1636,7 @@ jQ.get(url, callback),$.post(url,data,callback)
               
               <div class="site-state-item site-state-tags">
                 <a href="/0730chen.github.io/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1703,7 +1677,7 @@ jQ.get(url, callback),$.post(url,data,callback)
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">前端菜鸟</span>
+  <span class="author" itemprop="copyrightHolder">前端</span>
 
   
 </div>
