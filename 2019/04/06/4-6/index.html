@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1.jsonp实现跨域原理实现  跨域：端口不通，协议不同，域名不同之间的数据交流都是跨域  jsonp是使用script标签不会引起跨域的特性实现数据跨域交互  在一个index.html文件中定义show()方法 function show(){}  使用node.js搭建一个本地服务器，定义变量 scriptStr = ‘show()’,并添加一个if判断，如果请求的参数为/getscrip">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-07T03:41:23.581Z">
+<meta property="og:updated_time" content="2019-04-07T13:29:47.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="4.6">
 <meta name="twitter:description" content="1.jsonp实现跨域原理实现  跨域：端口不通，协议不同，域名不同之间的数据交流都是跨域  jsonp是使用script标签不会引起跨域的特性实现数据跨域交互  在一个index.html文件中定义show()方法 function show(){}  使用node.js搭建一个本地服务器，定义变量 scriptStr = ‘show()’,并添加一个if判断，如果请求的参数为/getscrip">
@@ -339,7 +339,7 @@
       
 
       
-        <p>1.jsonp实现跨域原理实现<br>  跨域：端口不通，协议不同，域名不同之间的数据交流都是跨域<br>  jsonp是使用script标签不会引起跨域的特性实现数据跨域交互<br>  在一个index.html文件中定义show()方法 function show(){}<br>  使用node.js搭建一个本地服务器，定义变量 scriptStr = ‘show()’,并添加一个if判断，如果请求的参数为/getscript，则发送scriptStrgei response.end(scriptStr)返回给客户端。在客户端script标签中添加src属性=’服务器启动地址’，当客户端刷新则请求服务器，服务器返回show()字符串，客户端则调用show()方法<br>2.callback解析<br>  导入url解析包， canst {pathname:url, callback}<br>  新建一个data对象可以当作参数传入返回客户端中，客户端的方法参数默认data，输出data可以获取到这个对象<br>  在res.end()中发送拼接的模板字符串·${url}(data)·</p>
+        <p>1.jsonp实现跨域原理实现<br>  跨域：端口不通，协议不同，域名不同之间的数据交流都是跨域<br>  jsonp是使用script标签不会引起跨域的特性实现数据跨域交互<br>  在一个index.html文件中定义show()方法 function show(){}<br>  使用node.js搭建一个本地服务器，定义变量 scriptStr = ‘show()’,并添加一个if判断，如果请求的参数为/getscript，则发送scriptStrgei response.end(scriptStr)返回给客户端。在客户端script标签中添加src属性=’服务器启动地址’，当客户端刷新则请求服务器，服务器返回show()字符串，客户端则调用show()方法<br>2.callback解析<br>  导入url解析包， canst {pathname:url, query} = urlmodel.parse(req.url,true)<br>  新建一个data对象可以当作参数传入返回客户端中，客户端的方法参数默认data，输出data可以获取到这个对象<br>  在res.end()中发送拼接的模板字符串var scriptStr = ·${query.callback}(${JSON.stringify(data)})·可以向客户端传递对象</p>
 
       
     </div>
