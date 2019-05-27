@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1.webpack的使用总结  需要安装node.js程序，并在命令行中输入 node -v 出现正确的版本号  建立项目文件夹，并在命令行中进入项目文件 例如CD project  初始化 npm init -y  安装 webpack npm install webpack –save-dev  安装 webpack-cli npm install webpack-cli –save-dev">
+<meta name="description" content="这是一个markdown文件 对于数据库查询函数，将这个数据库方式封装成一个函数，要在外部调用这个函数并且拿到数据库操作的结果（数据库中的数据） 1.可以使用回调函数callback，在外部获取想要的结果 2.可以使用异步async操作方法 3.在外部赋值一个全局变量，然后将callback中的值赋值给这个变量，函数外部就可以使用 4.模板字符串的使用使用 ${}可以在其中添加变量例如${msg}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4.5">
-<meta property="og:url" content="https://0730chen.github.io/2019/04/05/4-5/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://0730chen.github.io/2019/05/27/5.27/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.webpack的使用总结  需要安装node.js程序，并在命令行中输入 node -v 出现正确的版本号  建立项目文件夹，并在命令行中进入项目文件 例如CD project  初始化 npm init -y  安装 webpack npm install webpack –save-dev  安装 webpack-cli npm install webpack-cli –save-dev">
+<meta property="og:description" content="这是一个markdown文件 对于数据库查询函数，将这个数据库方式封装成一个函数，要在外部调用这个函数并且拿到数据库操作的结果（数据库中的数据） 1.可以使用回调函数callback，在外部获取想要的结果 2.可以使用异步async操作方法 3.在外部赋值一个全局变量，然后将callback中的值赋值给这个变量，函数外部就可以使用 4.模板字符串的使用使用 ${}可以在其中添加变量例如${msg}">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-06T02:25:02.796Z">
+<meta property="og:updated_time" content="2019-05-27T12:15:54.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4.5">
-<meta name="twitter:description" content="1.webpack的使用总结  需要安装node.js程序，并在命令行中输入 node -v 出现正确的版本号  建立项目文件夹，并在命令行中进入项目文件 例如CD project  初始化 npm init -y  安装 webpack npm install webpack –save-dev  安装 webpack-cli npm install webpack-cli –save-dev">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="这是一个markdown文件 对于数据库查询函数，将这个数据库方式封装成一个函数，要在外部调用这个函数并且拿到数据库操作的结果（数据库中的数据） 1.可以使用回调函数callback，在外部获取想要的结果 2.可以使用异步async操作方法 3.在外部赋值一个全局变量，然后将callback中的值赋值给这个变量，函数外部就可以使用 4.模板字符串的使用使用 ${}可以在其中添加变量例如${msg}">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://0730chen.github.io/2019/04/05/4-5/">
+  <link rel="canonical" href="https://0730chen.github.io/2019/05/27/5.27/">
 
 
 
 
 
-  <title>4.5 | Hexo</title>
+  <title> | Hexo</title>
   
 
 
@@ -272,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/04/05/4-5/">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/05/27/5.27/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="前端">
@@ -289,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">4.5</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -301,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T20:14:55+08:00">
-                2019-04-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-27T20:15:54+08:00">
+                2019-05-27
               </time>
             
 
@@ -339,7 +339,21 @@
       
 
       
-        <p>1.webpack的使用总结<br>  需要安装node.js程序，并在命令行中输入 node -v 出现正确的版本号<br>  建立项目文件夹，并在命令行中进入项目文件 例如CD project<br>  初始化 npm init -y<br>  安装 webpack npm install webpack –save-dev<br>  安装 webpack-cli npm install webpack-cli –save-dev<br>  新建文件夹src，dist，src是存放静态资源的文件夹。并存在一个index.js文件，这是一个入口文件，里面是依赖文件及其静态资源的引用 根目录下存在index.html文件对打包后的文件进行引用<br>  使用命令 npx webpack进行打包， 或在package.json中进行配置文件配置依赖项，配置webpack的打包模式<br>  index.js中支持ES6语法，主要是处理依赖项<br>  webpack.config.js配置文件。 引用path静态资源包。 配置打包文件的入口和打包文件的输出文件及文件名<br>  处理图片<br>  下载css文件处理器， npm install style-loader css-loader –save-dev<br>  并在配置文件中配置 module：use{}<br>  下载图片处理器， npm install –save-dev file-name  配置option属性：{设置打包的文件输出文件，名字，打包格式}</p>
+        <h1 id="这是一个markdown文件"><a href="#这是一个markdown文件" class="headerlink" title="这是一个markdown文件"></a>这是一个markdown文件</h1><ul>
+<li>对于数据库查询函数，将这个数据库方式封装成一个函数，要在外部调用这个函数并且拿到数据库操作的结果（数据库中的数据）</li>
+<li>1.可以使用回调函数callback，在外部获取想要的结果</li>
+<li>2.可以使用异步async操作方法</li>
+<li>3.在外部赋值一个全局变量，然后将callback中的值赋值给这个变量，函数外部就可以使用</li>
+<li>4.模板字符串的使用使用 <code>${}</code>可以在其中添加变量例如<code>${msg}</code></li>
+<li>5.node+express实现添加评论给后台数据，后台数据库返回数据给前台页面<br><code>$.ajax({methods:&#39;&#39;,url:&#39;&#39;,type:&#39;&#39;,data:{},dateType:&#39;&#39;,success:function(){}发送成功后调用方法，可以接受后台传输回来的数据})</code>前端页面使用ajax请求post方式发送给后台处理，并储存在数据库中</li>
+</ul>
+<hr>
+<ul>
+<li>6.后台要接受到前端传输过来的数据，并且将数据储存在数据库中，在储存完成过后，要发送一个储存数据的信息表示储存成功了. 对于post请求，使用<code>使用router.post(&#39;/&#39;,function(req,res){ })</code>post请求有两个状态一个是<code>req.on(&#39;data&#39;,function(chunk){ data += chunk})</code>用来接收从前台传输过来的数据，并且这个数据是二进制数据。不容易阅读,二是<code>req.on(&#39;end&#39;,function(){})</code>主要是处理二进制数据使用<code>data = querystring.parse(data)</code>将数据解析成对象，随后将data中的文本传入数据库操作函数中，将数据插入数据库中</li>
+<li>7.对于get请求，使用<code>router.get(&#39;/&#39;,function(req.res){})</code>get请求的数据都会附着在url中传输给后台，在get函数中对url进行解析 <code>var user = url.parse(req.url, true)</code> 将url解析成对象，从url对象中获取到想要的数值。user或者path</li>
+<li>8.get请求后也可以获取数据库中的数据，并将数据发送给前端页面，使用<code>在获取数据库函数中加入callback函数，在访问成功数据库中的函数后，调用callback函数。function(err,data){if(err){console.log(err)}else{res.send(data)}}</code></li>
+<li>9.promise ES6中的promise对象。Promise是一个容器里面保存结束的事件才会操作的结果，主要是可以进行异步操作<br>Promise对象有3中状态，pending(进行中),fulfilled(成功了)，rejected(失败了)，只有异步操作的结果可以决定当前是哪一种状态，其他操作都无法。Promise是一个构造函数，接受两个参数function(reslove,reject),resolve代表成功状态，reject代表失败状态。<code>const promise = new Promsie(function(resolve,reject){if(&#39;异步成功&#39;){resolve}else{reject(error)}})</code>Promise实例生成后，可以用then方法分别指定resolve和reject的状态的回调函数，then可以接受两个函数作为回调函数，分别指定resolve的与reject的回调函数</li>
+</ul>
 
       
     </div>
@@ -364,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/0730chen.github.io/2019/03/21/3-21/" rel="next" title="3.21">
-                <i class="fa fa-chevron-left"></i> 3.21
+              <a href="/0730chen.github.io/2019/04/09/4-9/" rel="next" title="4.9">
+                <i class="fa fa-chevron-left"></i> 4.9
               </a>
             
           </div>
@@ -373,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/0730chen.github.io/2019/04/06/4-6/" rel="prev" title="4.6">
-                4.6 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -428,8 +438,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -489,6 +508,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#这是一个markdown文件"><span class="nav-number">1.</span> <span class="nav-text">这是一个markdown文件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
