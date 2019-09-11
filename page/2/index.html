@@ -269,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/04/3-4/">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/11/3-11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="前端">
@@ -288,7 +288,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/0730chen.github.io/2019/03/04/3-4/" itemprop="url">3.4</a></h1>
+                <a class="post-title-link" href="/0730chen.github.io/2019/03/11/3-11/" itemprop="url">3.11</a></h1>
         
 
         <div class="post-meta">
@@ -300,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-04T21:58:56+08:00">
-                2019-03-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T21:22:48+08:00">
+                2019-03-11
               </time>
             
 
@@ -340,8 +340,10 @@
       
         
           
-            <p>CSS动画属性<br>1.transform<br> transform属性常用的有4个方法，translate（x,y）移动，scale()缩放大小，rotate()沿着轴旋转，skew()倾斜。<br>2.translation<br> 有4个属性值，property过渡动画的属性名称，duration过渡完成需要多长时间，timing-function动画完成的速度曲线，delay定义过渡效果从什么时间开始。<br>3.animation<br>  name:动画名称，duration：过渡时间，timing-function:完成曲线,delay:延迟，itera-counter：动画次数，direction：轮流反向播放动画。</p>
-<p>自适应布局方法<br>1.传统</p>
+            <p>1.活动页面的原理<br>  主要使用overflow：hidden隐藏超出的页面，给整个页面在一个div标签中，div赋值设置top（向下翻页）或者left（向右翻页），每一页都是固定的距离。这样可以在一个html文件中完成多个页面的展示。<br>2.图片库原理<br>  使用div标签建立一个大图展示区域，分别使用div建立小图展示区域。给小图定位赋值使用float：left属性，向左浮动，使他们排成一列。简单的页面布置就这样成功了，再加入图片的时候，使用createElement（’img’）方法建立img标签，并建立for循环，使用setattribute（’src’,路径）由于路径是字符串，所以要使用拼接字符串的方式，提前将图片的名称设置为1-5.jpg。</p>
+<p>  实现点击小图更新相应的大图<br>    给小图区域的父元素绑定一个onclick事件，本来是要给每一个img绑定事件，这里使用了事件冒泡，内部子元素要绑定相同的事件，则可以绑定在他们的父元素上，事件也可以触发，减少代码量。使用getattribute（’src’）方法获取当前点击图片的src路径。，并使用setattribute赋值给大图的src路径，则可以实现点击小图切换到对应大图上。</p>
+<p>  实现页面的明暗</p>
+<p>3.实现简单的轮播图</p>
 
           
         
@@ -480,6 +482,127 @@ flag为ture则第一个，false则为第二个。
 <p>5.指令的简写<br>    v-bind：属性绑定可以简写为:<br>    v-on绑定事件可以简写为@ @click=”函数名”<br>    使用数组的方法添加数据。push()向数据末尾插入数据 ，unshift()向数据顶上添加数据</p>
 <p> 6.Vue的过滤器<br>   可以对常见的文本进行格式化输出<br>   定义名称<br>   Vue.filter(‘过滤器名称’，function(msg,这里可以传参){}) ｛｛name|过滤器名称｝｝<br>   过滤器在中间处理，数据本身并没有被修改<br>   在输出时对文本进行修改</p>
 <p>   私有过滤器和全局过滤器会优先调用私有过滤器。<br>   全局过滤器就是全部的VM实例都共享的<br>   私有过滤器是在一个Vm实例中定义的。<br>   filter:{<br>   定义过滤器<br>}</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/04/3-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/03/04/3-4/" itemprop="url">3.4</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-04T21:58:56+08:00">
+                2019-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>CSS动画属性<br>1.transform<br> transform属性常用的有4个方法，translate（x,y）移动，scale()缩放大小，rotate()沿着轴旋转，skew()倾斜。<br>2.translation<br> 有4个属性值，property过渡动画的属性名称，duration过渡完成需要多长时间，timing-function动画完成的速度曲线，delay定义过渡效果从什么时间开始。<br>3.animation<br>  name:动画名称，duration：过渡时间，timing-function:完成曲线,delay:延迟，itera-counter：动画次数，direction：轮流反向播放动画。</p>
+<p>自适应布局方法<br>1.传统</p>
 
           
         
@@ -1381,126 +1504,6 @@ jQ.get(url, callback),$.post(url,data,callback)
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/01/03/心得/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/01/03/心得/" itemprop="url">心得</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T21:38:00+08:00">
-                2019-01-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>JS中每一个变量（也就是每一个值）都是一种数据类型<br> （一）内置的基本数据类型有以下几类：<br> 1.number 数字 2.string 字符串<br> 3.boolean 布尔变量 4.object 对象<br> （二）1.8<br>   笔记–类型-值-变量<br> 1.数据类型：在编程语言中表示能够操作的值被称为数据类型<br> 2.编程最基本的特性就是能够支持多种数据类型<br> 3.通过将值赋值给变量将值保存在变量中<br> 4.变量是一个名称，可以通过名称来获得对值的引用<br>   数据类型分类<br> 1.JavaScript的数据类型分为两类：原始类型（primitive type）和对象数据类型（object type）<br> 原始数据类型包括：数字，字符串，布尔值。特殊的原始值：null和undefined他们不是原始数据类型<br> 对象数据类型：除了原始数据类型，null和undefined之外都是对象数据类型。（1）对象是属性（property）的集合，每个属性由名和值组成，例如{小明：boy}普通的对象是命名值的无序集合。（2）数组也是对象数据类型，它是带编号的有序集合。（3）特殊对象：函数-函数是具有与它相关的可执行的代码的对象，通过调用函数来运行可执行代码。<br> 2.JavaScript解释器有自己的内存管理工具，可以自动进行垃圾回收<br> 3.JavaScript是一种面向对象的语言，在JavaScript中只有null和undefined是无法拥有方法的值。<br> 4.JavaScript的类型除可以分为3种（1）原始类型和对象类型。（2）拥有方法类型和不拥有方法类型。（3）可变类型和不可变类型，可变类型：比如对象和数组的值是可以修改的，不可变类型：比如null，字符串，undefined是不可修改的<br> 5.JavaScript的变量：变量是无类型的，变量可以被赋值任何值，也可以重新赋予不同类型的值例。不在任何函数内声明的变量为全局变量，在程序任何地方都是可见的。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1551,7 +1554,7 @@ jQ.get(url, callback),$.post(url,data,callback)
               
                 <a href="/0730chen.github.io/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="这是一个markdown文件 对于数据库查询函数，将这个数据库方式封装成一个函数，要在外部调用这个函数并且拿到数据库操作的结果（数据库中的数据） 1.可以使用回调函数callback，在外部获取想要的结果 2.可以使用异步async操作方法 3.在外部赋值一个全局变量，然后将callback中的值赋值给这个变量，函数外部就可以使用 4.模板字符串的使用使用 ${}可以在其中添加变量例如${msg}">
+<meta name="description" content="使用hugo部署网站步骤 下载安装hugo 通过链接下载hugo安装包 解压安装hugo后生成hugo.exe文件 将hugo.exe路径添加到系统的path路径中 在命令行中输入hugo version 查看是否安装成功   生成静态站点 输入命令 hugo new site blog 建立文件夹名称 hugo new blog.md 命令生成页面 hugo new posts\first-po">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://0730chen.github.io/2019/05/27/5.27/index.html">
+<meta property="og:url" content="https://0730chen.github.io/2019/09/11/使用hugo搭建博客/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这是一个markdown文件 对于数据库查询函数，将这个数据库方式封装成一个函数，要在外部调用这个函数并且拿到数据库操作的结果（数据库中的数据） 1.可以使用回调函数callback，在外部获取想要的结果 2.可以使用异步async操作方法 3.在外部赋值一个全局变量，然后将callback中的值赋值给这个变量，函数外部就可以使用 4.模板字符串的使用使用 ${}可以在其中添加变量例如${msg}">
+<meta property="og:description" content="使用hugo部署网站步骤 下载安装hugo 通过链接下载hugo安装包 解压安装hugo后生成hugo.exe文件 将hugo.exe路径添加到系统的path路径中 在命令行中输入hugo version 查看是否安装成功   生成静态站点 输入命令 hugo new site blog 建立文件夹名称 hugo new blog.md 命令生成页面 hugo new posts\first-po">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-27T12:15:54.031Z">
+<meta property="og:updated_time" content="2019-09-11T11:58:41.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="这是一个markdown文件 对于数据库查询函数，将这个数据库方式封装成一个函数，要在外部调用这个函数并且拿到数据库操作的结果（数据库中的数据） 1.可以使用回调函数callback，在外部获取想要的结果 2.可以使用异步async操作方法 3.在外部赋值一个全局变量，然后将callback中的值赋值给这个变量，函数外部就可以使用 4.模板字符串的使用使用 ${}可以在其中添加变量例如${msg}">
+<meta name="twitter:description" content="使用hugo部署网站步骤 下载安装hugo 通过链接下载hugo安装包 解压安装hugo后生成hugo.exe文件 将hugo.exe路径添加到系统的path路径中 在命令行中输入hugo version 查看是否安装成功   生成静态站点 输入命令 hugo new site blog 建立文件夹名称 hugo new blog.md 命令生成页面 hugo new posts\first-po">
 
 
 
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="https://0730chen.github.io/2019/05/27/5.27/">
+  <link rel="canonical" href="https://0730chen.github.io/2019/09/11/使用hugo搭建博客/">
 
 
 
@@ -272,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/05/27/5.27/">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/11/使用hugo搭建博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="前端">
@@ -301,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-27T20:15:54+08:00">
-                2019-05-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-11T19:58:43+08:00">
+                2019-09-11
               </time>
             
 
@@ -339,21 +339,39 @@
       
 
       
-        <h1 id="这是一个markdown文件"><a href="#这是一个markdown文件" class="headerlink" title="这是一个markdown文件"></a>这是一个markdown文件</h1><ul>
-<li>对于数据库查询函数，将这个数据库方式封装成一个函数，要在外部调用这个函数并且拿到数据库操作的结果（数据库中的数据）</li>
-<li>1.可以使用回调函数callback，在外部获取想要的结果</li>
-<li>2.可以使用异步async操作方法</li>
-<li>3.在外部赋值一个全局变量，然后将callback中的值赋值给这个变量，函数外部就可以使用</li>
-<li>4.模板字符串的使用使用 <code>${}</code>可以在其中添加变量例如<code>${msg}</code></li>
-<li>5.node+express实现添加评论给后台数据，后台数据库返回数据给前台页面<br><code>$.ajax({methods:&#39;&#39;,url:&#39;&#39;,type:&#39;&#39;,data:{},dateType:&#39;&#39;,success:function(){}发送成功后调用方法，可以接受后台传输回来的数据})</code>前端页面使用ajax请求post方式发送给后台处理，并储存在数据库中</li>
+        <h1 id="使用hugo部署网站步骤"><a href="#使用hugo部署网站步骤" class="headerlink" title="使用hugo部署网站步骤"></a>使用hugo部署网站步骤</h1><ol>
+<li>下载安装hugo<ul>
+<li>通过链接下载hugo安装包</li>
+<li>解压安装hugo后生成hugo.exe文件</li>
+<li>将hugo.exe路径添加到系统的path路径中</li>
+<li>在命令行中输入hugo version 查看是否安装成功</li>
 </ul>
-<hr>
-<ul>
-<li>6.后台要接受到前端传输过来的数据，并且将数据储存在数据库中，在储存完成过后，要发送一个储存数据的信息表示储存成功了. 对于post请求，使用<code>使用router.post(&#39;/&#39;,function(req,res){ })</code>post请求有两个状态一个是<code>req.on(&#39;data&#39;,function(chunk){ data += chunk})</code>用来接收从前台传输过来的数据，并且这个数据是二进制数据。不容易阅读,二是<code>req.on(&#39;end&#39;,function(){})</code>主要是处理二进制数据使用<code>data = querystring.parse(data)</code>将数据解析成对象，随后将data中的文本传入数据库操作函数中，将数据插入数据库中</li>
-<li>7.对于get请求，使用<code>router.get(&#39;/&#39;,function(req.res){})</code>get请求的数据都会附着在url中传输给后台，在get函数中对url进行解析 <code>var user = url.parse(req.url, true)</code> 将url解析成对象，从url对象中获取到想要的数值。user或者path</li>
-<li>8.get请求后也可以获取数据库中的数据，并将数据发送给前端页面，使用<code>在获取数据库函数中加入callback函数，在访问成功数据库中的函数后，调用callback函数。function(err,data){if(err){console.log(err)}else{res.send(data)}}</code></li>
-<li>9.promise ES6中的promise对象。Promise是一个容器里面保存结束的事件才会操作的结果，主要是可以进行异步操作<br>Promise对象有3中状态，pending(进行中),fulfilled(成功了)，rejected(失败了)，只有异步操作的结果可以决定当前是哪一种状态，其他操作都无法。Promise是一个构造函数，接受两个参数function(reslove,reject),resolve代表成功状态，reject代表失败状态。<code>const promise = new Promsie(function(resolve,reject){if(&#39;异步成功&#39;){resolve}else{reject(error)}})</code>Promise实例生成后，可以用then方法分别指定resolve和reject的状态的回调函数，then可以接受两个函数作为回调函数，分别指定resolve的与reject的回调函数</li>
+</li>
+<li>生成静态站点<ul>
+<li>输入命令 hugo new site blog 建立文件夹名称</li>
+<li>hugo new blog.md 命令生成页面</li>
+<li>hugo new posts\first-post.md 添加页面</li>
+<li>启动 hugo server 启动服务</li>
 </ul>
+</li>
+<li>在Github中新建一个your-github-name.github.io的仓库<ul>
+<li>将根目录下config.toml中文件baseURL改变成<a href="https://your-github-name.github.io/" target="_blank" rel="noopener">网址</a></li>
+<li>使用git将本地仓库与github云端仓库连接起来</li>
+<li>git init 初始化</li>
+<li>git remote add origin 链接</li>
+<li>git add .</li>
+<li>git commit -v</li>
+<li>git push -u origin master<br>文件都储存在public文件中</li>
+</ul>
+</li>
+<li>购买域名 购买soilname或者阿里云购买域名<ul>
+<li>点击github.io仓库中的setting，填入你购买的域名</li>
+<li>在你的github.io仓库中出现一个CNAME文件</li>
+<li>解析域名，将域名指向你的github.io</li>
+</ul>
+</li>
+<li>访问购买的域名，出现刚才搭建的博客</li>
+</ol>
 
       
     </div>
@@ -378,8 +396,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/0730chen.github.io/2019/04/09/4-9/" rel="next" title="4.9">
-                <i class="fa fa-chevron-left"></i> 4.9
+              <a href="/0730chen.github.io/2019/05/27/5.27/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -387,10 +405,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/0730chen.github.io/2019/09/11/使用hugo搭建博客/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -522,7 +536,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#这是一个markdown文件"><span class="nav-number">1.</span> <span class="nav-text">这是一个markdown文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用hugo部署网站步骤"><span class="nav-number">1.</span> <span class="nav-text">使用hugo部署网站步骤</span></a></li></ol></div>
             
 
           </div>
