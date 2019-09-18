@@ -269,6 +269,325 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/16/常用标签详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/09/16/常用标签详解/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-16T23:53:43+08:00">
+                2019-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="HTML的常用标签以及用法"><a href="#HTML的常用标签以及用法" class="headerlink" title="HTML的常用标签以及用法"></a>HTML的常用标签以及用法</h1><ol>
+<li>a标签<ul>
+<li>href属性是超级引用 hyper refrence 其中的值可以为网址例如’<a href="http://www.baidu.com&#39;,路径&#39;./a&#39;,伪协议" target="_blank" rel="noopener">www.baidu.com&#39;,路径&#39;./a&#39;,伪协议</a><ol>
+<li>知识点:当href为空时，点击a标签页面会刷新，一般使用’javascript：’这点a标签不会刷新</li>
+</ol>
+</li>
+<li>target属性<ol>
+<li>_blank值，表示在新窗口中打开链接</li>
+<li>_self值，在相同的框架中打开连接</li>
+<li>_parent 在父窗口中打开链接，iframe内嵌网页中出现</li>
+<li>_top 在整个页面窗口中打开链接</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>iframe标签<ul>
+<li>iframe标签可以内嵌html，现在很少使用</li>
+</ul>
+</li>
+<li>img<ul>
+<li>src属性<ol>
+<li>src接受一个地址字符串，可以是url，路径,src是发送了一个get请求，可以在knetwork查看</li>
+</ol>
+</li>
+<li>alt属性<ol>
+<li>常规是用不到的，在src的地址或者路径出错后，显示alt的值</li>
+</ol>
+</li>
+<li>img有两个事件<ol>
+<li>onload事件，图片加载成功调用</li>
+<li>onerror事件，图片加载失败调用</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>table<br> table标签里面还有<figure class="highlight"><figcaption><span><thead></thead> <tbody></tbody> <tfoot></tfoot>```在页面上制作表格</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">5. <span class="selector-tag">form</span> </span><br><span class="line">	* <span class="selector-tag">action</span>属性</span><br><span class="line">		1. 请求资源的路径，网址</span><br><span class="line">	* <span class="selector-tag">methods</span>属性</span><br><span class="line">		2. 定义访问请求路径的方式，有<span class="selector-tag">post</span>方式与<span class="selector-tag">get</span>方式</span><br><span class="line">			<span class="selector-tag">get</span>携带参数在<span class="selector-tag">url</span>中，<span class="selector-tag">post</span>携带参数不在<span class="selector-tag">url</span>中</span><br><span class="line">		3. <span class="selector-tag">auth</span> </span><br><span class="line">			<span class="selector-tag">complate</span> 自动补全用户名</span><br><span class="line">		4. <span class="selector-tag">target</span>与<span class="selector-tag">a</span>标签的属性一致</span><br><span class="line">		5. <span class="selector-tag">form</span>标签需要有一个提交按钮，<span class="selector-tag">input</span>标签，<span class="selector-tag">type</span>属性为<span class="selector-tag">submit</span>. 当<span class="selector-tag">input</span>为<span class="selector-tag">button</span>时点击后不能点击</span><br><span class="line">6. <span class="selector-tag">input</span>标签</span><br><span class="line">	* <span class="selector-tag">type</span></span><br><span class="line">		1. <span class="selector-tag">text</span></span><br><span class="line">			输入文本页面</span><br><span class="line">		2. <span class="selector-tag">checkbox</span></span><br><span class="line">			定义复选框</span><br><span class="line">		3. <span class="selector-tag">submit</span></span><br><span class="line">		 	<span class="selector-tag">form</span>表单提交数据</span><br><span class="line">		4. <span class="selector-tag">radio</span></span><br><span class="line">			定义单选按钮</span><br><span class="line">		5. <span class="selector-tag">password</span></span><br><span class="line">			定义密码段,字符被掩码</span><br><span class="line">		6. <span class="selector-tag">hidden</span></span><br><span class="line">			输入隐藏输入字段(给机器看的)</span><br><span class="line">		7. <span class="selector-tag">file</span></span><br><span class="line">			定义输入字段和浏览按钮，供文件上传</span><br><span class="line">7. <span class="selector-tag">meta</span>标签</span><br><span class="line">	```css &lt;meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" /&gt;</span><br></pre></td></tr></table></figure></p>
+<p> 固定属性：name=viewport 是窗口。视窗<br> content=””<br> widtn = device-width<br> minimum-scale = 1.0 最小缩放<br> maximum-scale = 1.0 最大缩放<br> initial-scale = 1.0 初始缩放<br> user-scalable = 1.0    禁止用户缩放 默认为搜索<br> 四个属性值</p>
+</li>
+<li>写博客也是一种记忆的方法</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/16/url学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/09/16/url学习/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-16T23:53:38+08:00">
+                2019-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="浅析Url"><a href="#浅析Url" class="headerlink" title="浅析Url"></a>浅析Url</h1><ol>
+<li>url称为统一资源定位符<ul>
+<li>协议 服务器地址 路径/文件名，参数</li>
+</ul>
+<ol>
+<li>协议种类 http(80端口) https(443端口)  FTP文件传输协议 </li>
+<li>主机名 IP地址 网页输入url后, DNS将网址域名解析成IP地址并访问</li>
+<li>端口号 端口就是你是打开的是什么服务</li>
+<li>路径：url的第三项为路径。它定义信息保存在 这台计算机上的什么地方，即哪个子目录中。 每个子目录的前面有 一条斜杠 。路径部分包含等级结构的路径定义，一般来说不同部分之间以斜线（/）分隔。询问部分一般用来传送对服务器上的数据库进行动态询问时所需要的参数。</li>
+<li>主页名<br>例如 index.html .png .text等等文件</li>
+</ol>
+</li>
+<li>DNS <ul>
+<li>DNS是域名系统，是将域名解析成为IP地址，能够更方便的访问互联网</li>
+<li>nslookup 主要用于查询DNS的记录，查看域名是否正常，诊断网络故障<ol>
+<li>nslookup domain [dns-server] 查询一个一个域名的A记录  nslookup baidu.com</li>
+<li>nslookup -qt=type domain [dns-server]  dns-server是一个IP地址</li>
+<li>nslookup –d [其他参数] domain [dns-server]</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>IP的是internet protocol 网络协议 是计算机网络中连接的桥梁<ul>
+<li>IP地址相当于一个门牌号</li>
+<li>ping 是一个命令,属于一个通信协议是TCP/IP的一部分<ol>
+<li>利用ping检查网络是否连通 ping IP地址检查网络是否通顺</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>域名 domain name<ol>
+<li>域名与IP地址是对应的 输入域名经过DNS解析找到对应的IP地址,进行访问</li>
+<li>域名等级<ul>
+<li>顶级域名：.cn</li>
+<li>二级域名：.com .top</li>
+<li>三级域名<br><a href="http://www.ncic.ac.cn" target="_blank" rel="noopener">www.ncic.ac.cn</a>    .cn是顶级域名   ac.cn是二级域名   ncic是ac.cn的子域名</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/12/JS基础知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -508,11 +827,7 @@
             <h1 id="《HTML入门笔记1》"><a href="#《HTML入门笔记1》" class="headerlink" title="《HTML入门笔记1》"></a>《HTML入门笔记1》</h1><ol>
 <li>什么是Html<ul>
 <li>Html全称是超文本标记语言。主要用于搭建网络页面结构的骨架</li>
-<<<<<<< HEAD
 <li>谁发明了Html语言 李爵士 </li>
-=======
-<li>谁发明了Html语言 蒂姆·伯纳斯-李</li>
->>>>>>> 博客
 </ul>
 </li>
 <li>Html起手应该写什么<ul>
@@ -1386,258 +1701,6 @@ $(&apos;button&apos;).click(function(){ var val = $(this).attr(&apos;value&apos;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/18/3-18/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/03/18/3-18/" itemprop="url">3.18</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T22:18:33+08:00">
-                2019-03-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>JavaScipt对象与继承关系<br>1.构建构造函数<br>  function Foo(){}<br>2.创建实例对象<br>  var f = new Foo()<br>  var o = new Object()</p>
-<p>Foo.prototype与f.<strong>proto</strong>指向相同的构造函数F.<br>Foo.prototype.<strong>proto</strong>指向了Obejct.prototype<br>o.<strong>proto</strong>也指向了Object.prototype<br>instance-&gt;<strong>proto</strong>-&gt;person.prototype-&gt;constructor&lt;-person.prototype-&gt;function Person(){}-&gt;Object()-&gt;window</p>
-<p>3.继承<br>function Brick(){<br>    this.width = 10<br>    this.height =20<br>}<br>使用继承方式</p>
-<p>function BlueGlassBrick() {<br>    Brick.call(this)<br>    this.opacity = 0.5  添加的新属性<br>    this.color = ‘blue’<br>}<br>Brick.prototype.xxx = function(){<br>    给原型添加新方法<br>}</p>
-<p>新建的构建起BlueGlassBrick()默认有一个空的原型属性。<br>使BlueGlassBrick()构造器从Brick()中继承方法，使原型属性指向Brick.prototype的原型属性,使用Object的create方法创建一个和Brick.prototype相同的原型属性并赋值给新构造的空原型属性<br>BlueGlassBrick.prototype = Object.create(Brick.prototype)<br>这个时候BlueGlassBrick.prototype.constructor指向的是Brick()<br>然后在使BlueGlassBrick.prototype.constructor = BlueGlassBrick<br>var s = new BlueGlassBrick（）构建的s对象也有了xxx方法</p>
-<p>客户端储存</p>
-<p>1.cookies储存数据<br>2.Web storage<br>localStorage在浏览器中储存数据<br>localStorage.setItem(‘name’,’chris’)添加数据<br>Storage.getItem()接受一个参数并返回数据<br>localStroage.removeItem(‘’)接受一个参数并删除一组数据<br>关闭浏览器之后再打开也可以访问<br>sessionStorage为页面会话期间可用的每个给定源一个单独的储存区域，只要浏览器处于打开状态就会存在，浏览器关闭之后就会删除数据</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/16/3-16/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/03/16/3-16/" itemprop="url">3.16</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-16T21:25:25+08:00">
-                2019-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Canvas学习<br>使用Canvas绘制图形<br>1.首先在网页中创建一个画布在HTML加入canvas标签</p>
-<p><canvas width="320" height="320" class="mycanvas"></canvas><br>设定画布的高度和宽度,在HTML中生成画布，使用JS操纵元素生成想要的效果。</p>
-<p>2.获取画布<br>var canvas = document.querySelector(‘.mycanvas’)<br>var width = canvas.width = window.innerWidth<br>var height = canvas.height = window.innerHeight<br>将窗口宽度和高度赋值给画布的宽度和高度。整个窗口就是画布。<br>使用getContext()方法获得2d或者3d画布。<br>var ctx  = convas.getContext(‘2d’) ctx变量中保存了2d画布<br>ctx.fillStyle = ‘rgb(0,0,0)’  fillStyle属性使画布填充一个颜色<br>ctx.fillRect(0,0,width,height) fillRect()绘制一个覆盖整个区域的矩形<br>0，0 代表的意思是距离左上角的距离，width，height代表的是矩形的长和宽</p>
-<p>fillStyle=’’填充颜色 接受一个字符串 fillRect()绘制一个矩形，接受4个参数<br>fillStyle = ‘rgba(1,1,1,0.25)’,前3个参数是颜色，最后一个参数是透明度，透明度越高，底层就越清晰</p>
-<p>3.画线条<br>获取画布<br>var canvas = document.querySelector(‘.mycanvas’)<br>var ctx = canvas.getContext(‘2d’)</p>
-<p>ctx.strokeStyle = ‘rgb()’ 设定线条颜色<br>ctx.lineWidth = 5   设定线条的像素，默认为1<br>ctx.strokeRect = () 4个参数，设定线条距离左上角距离，和线条的宽高</p>
-<p>4.绘制路径<br>beginPath():在钢笔当前所在位置开始绘制，在新画布中起始位置为（0，0）<br>moveTo()：将港币移动至另一个点，将钢笔跳至该点。 ctx.moveTo(50,59)<br>fill()：填充通过为当前所绘制的路径区域填充一个颜色来形成图案 ctx.fill()<br>stroke():通过为当前绘制路径的区域描边，来绘制一个边框形状 ctx.stroke（）</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1688,7 +1751,7 @@ $(&apos;button&apos;).click(function(){ var val = $(this).attr(&apos;value&apos;
               
                 <a href="/0730chen.github.io/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
