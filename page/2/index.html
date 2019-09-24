@@ -269,6 +269,140 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/21/3-21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/03/21/3-21/" itemprop="url">3.21</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T20:14:36+08:00">
+                2019-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.使一个div标签在页面中居中，水平居中和垂直居中<br>    设置div为绝对定位 position:absolute<br>    设置top值与left值都为50% top:50%;left:50%;<br>    设定你的width与height的值，例如400px，200px。<br>    设定margin-left与margin-top的值为你设定的width与height负值的一半<br>    margin-left:-100px;margin-top:-200px<br>    设定边框的颜色可以让效果更明显：border 1px solid #0088pp</p>
+<p>   //另一种方法</p>
+<p>   使用绝对定位<br>   使用margin：auto ，并设置top left right bottom的值为相同的，例如0<br>2.使用JavaScript实现选择题测验并判断最终得分</p>
+<pre><code>在每一选项中设定一个value值
+再点击按钮中绑定事件可以获取点击按钮的value值，
+设定一个集合，并添加每道题目的正确选项
+例如arr[0]=&apos;A&apos;，判断点击取得的value值与arr值进行对比，如果相同则证明答对。
+设定一个var score = 0，在每次判断成功后score = score+1
+score的值就是答对的题目数。
+使用zepto.js获取当前点击按钮的value值
+$(&apos;button&apos;).click(function(){ var val = $(this).attr(&apos;value&apos;)})//val中储存了你点击获得的value的值
+使用if判断val与集合中的值是否相等
+</code></pre><p>3.单页面选择题实现，点击按钮后只更新题目与答案，其他内容不更新</p>
+<p>在一个div实现选择题区域，并且使用display：none属性隐藏div，display默认值是block，将第一个题设为display：block，<br>后面两道设置为display：none,并给选项按钮添加点击事件，判断第一题display值是block则将它重新赋值为none，并将第二题display赋值为block则会显示页面</p>
+<p>4.可以使用@font-face{font-family:’起一个名字’,src(字体文件位置)}引入字体文件，自定义字体</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/18/3-18/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1448,127 +1582,6 @@ jQ.get(url, callback),$.post(url,data,callback)
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/02/27/webpackp学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/02/27/webpackp学习/" itemprop="url">webpackp学习（1）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T22:08:11+08:00">
-                2019-02-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>  webpack是一款打包工具，用于模块化编译JavaScript。可以使自己项目更加方便使用。<br>  1.安装<br>    首先安装nide.js运行环境，并配置环境变量<br>    在你的项目根目录下 运行命令 npm install webpack –save<br>                              npm install webpack-cli –save<br>  2.在你的项目文件夹下创建文件夹app并在其中创建index.js。新建dist文件夹，并配置package.json文件夹，确保private：ture，并且删除main属性</p>
-<p>  3.运行命令 webpack app/index.js dist/bundle.js<br>   app/index.js是一个入口，dist文件夹是一个出口，执行命令后dist文件中会生成bundle.js。<br>  webpack可以去除繁杂的依赖关系，使用webpack能够更好的管理你的代码。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1619,7 +1632,7 @@ jQ.get(url, callback),$.post(url,data,callback)
               
                 <a href="/0730chen.github.io/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
