@@ -269,6 +269,497 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/24/浏览器渲染原理及Css动画/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/09/24/浏览器渲染原理及Css动画/" itemprop="url">浏览器渲染原理及Css动画</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T20:50:47+08:00">
+                2019-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="浏览器的渲染原理"><a href="#浏览器的渲染原理" class="headerlink" title="浏览器的渲染原理"></a>浏览器的渲染原理</h4><ol>
+<li>进程与线程<ul>
+<li>进程：启动一个应用时，计算机会启动一个进程，然后分配内存</li>
+<li>线程：在创建线程后，也会创建线程用来辅助进程。<br>总结：进程包含线程 一个进程可以包含多个线程，进程的内存是线程共享的.</li>
+</ul>
+</li>
+<li><p>渲染步骤</p>
+<ul>
+<li>Html =&gt; 构建Html Dom树 =&gt;构建 Css树 =&gt; 然后将Dom树与Css树合并成渲染树 =&gt; 然后是定位，布局 ，盒模型，尺寸大小 =&gt; paint绘制（顺序是背景色，背景图，border children outline ） =&gt; 层叠合成</li>
+</ul>
+</li>
+<li><p>经典面试题</p>
+<ul>
+<li>从浏览器输入URL中按回车到页面显示过程中发生了什么<ol>
+<li>浏览器根据URL进行DNS查询<ul>
+<li>首页从DNS缓存中查询</li>
+<li>未在缓存中找到，则不停的向上一级请求DNS服务器</li>
+</ul>
+</li>
+<li>DNS将域名解析成IP地址后建立TCP连接（三次握手，四次挥手）<ul>
+<li>主要作用是保证数据信息传输的可靠性</li>
+</ul>
+</li>
+<li>构建HTTP请求报文<ul>
+<li>添加HTTP首部</li>
+<li>根据同源策略添加cookie</li>
+</ul>
+</li>
+<li>在TCP连接上发送HTTP报文，等待响应</li>
+<li>服务器处理HTTP请求报文，返回响应HTTP响应报文</li>
+<li>浏览器处理返回的HTTP响应报文，开始渲染页面<br>构建DOM树=&gt;构建Css树=&gt;合成渲染树=&gt;定位布局=&gt;paint绘制页面=&gt;层叠合成 用户就能看到页面了</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>URL中锚点后面的数据和值是不不会发送到后端服务器</li>
+<li>css动画<ol>
+<li>transition 过渡动画 是一段两个事件节点之间的过程<ul>
+<li>transition 属性名，时间 s为单位，过渡方式  延迟多久<br>ease默认 liner线性 inherit (经常使用)</li>
+<li>transform 变换 <ol>
+<li>rotate()旋转，接受一个角度值<ol start="2">
+<li>translate() 位移，将元素移动 接受一个像素值</li>
+<li>scale() 缩放 放大缩小，默认是1</li>
+<li>skew()扭曲变形 接受一个角度值</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>animation 动画是定义关键帧的状态来时间动画效果，可以控制关键帧的播放时间长等功能<br>@keyframe 动画名 定义关键帧的所处的状态的样式<br>使用  animation:动画名 时间 过渡函数<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-tag">animation-name</span>:动画名称 <span class="selector-tag">heart</span></span><br><span class="line"><span class="selector-tag">animation-duration</span>:动画执行时间 5<span class="selector-tag">S</span></span><br><span class="line"><span class="selector-tag">animation-timing-fuction</span>:是过渡函数 线性 先快后慢....</span><br><span class="line"><span class="selector-tag">animation-delay</span>:动画延迟时间，设置为负数则表示当前动画被截断</span><br><span class="line"><span class="selector-tag">animation-iteration-count</span><span class="selector-pseudo">:infinite</span> 动画执行次数 <span class="selector-tag">infinite</span>表示一直执行</span><br><span class="line"><span class="selector-tag">animation-direction</span><span class="selector-pseudo">:normal</span> 动画反向变化</span><br><span class="line"><span class="selector-tag">animation-fill-mode</span><span class="selector-pseudo">:forwards</span> 动画保持开始或者结束时的样式</span><br><span class="line"><span class="selector-tag">animation-play-state</span><span class="selector-pseudo">:running</span> 动画暂停或者运行</span><br><span class="line"><span class="selector-tag">animation</span><span class="selector-pseudo">:heart</span> 5<span class="selector-tag">s</span> <span class="selector-tag">linear</span> 2<span class="selector-tag">s</span> <span class="selector-tag">infinite</span> <span class="selector-tag">alternate-reverse</span> </span><br><span class="line"></span><br><span class="line">@<span class="keyword">keyframes</span> heart&#123;</span><br><span class="line">	0%&#123;</span><br><span class="line">		<span class="attribute">transform</span>:<span class="built_in">scale</span>(1)</span><br><span class="line">	&#125;</span><br><span class="line">	50%&#123;</span><br><span class="line">		<span class="attribute">transform</span>:<span class="built_in">scale</span>(1.2)</span><br><span class="line">	&#125;</span><br><span class="line">	75%&#123;</span><br><span class="line">		<span class="attribute">transform</span>:<span class="built_in">scale</span>(1.2)</span><br><span class="line">	&#125;</span><br><span class="line">	100%&#123;</span><br><span class="line">		<span class="attribute">transform</span>:<span class="built_in">scale</span>(1)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/24/JS函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/09/24/JS函数/" itemprop="url">JS函数知识点</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T20:50:05+08:00">
+                2019-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="Js-函数详解"><a href="#Js-函数详解" class="headerlink" title="Js 函数详解"></a>Js 函数详解</h5><ol>
+<li><p>引用时机<br>函数的引用时机决定了函数的值，引用时机不同，值也就不同<br>直接调用 test1()输出的 a 的值是 1，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">test1(); <span class="comment">//1</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">test1(); <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数作用域<br>函数的作用域是定义函数是所处的两个花括号之间<br>全局变量：1.在顶级作用域声明的变量就是全局变量，例如 a 就是全局变量 2. 在 window 上的变量是全局变量<br>局部变量: 在函数作用域声明的变量是局部变量<br>作用域嵌套：当一个作用域内部又出现一个作用域时，叫做作用域嵌套<br>静态作用域:也叫做词法作用域，作用域与函数的执行无关</p>
+</li>
+<li><p>闭包<br> 当一个函数要使用外部作用域的值时就出现了闭包</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"> <span class="built_in">window</span>.a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="comment">//花括号之间的内容都属于test2函数的作用域</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test3</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">test4</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> b = <span class="number">1</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">test5</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(b)<span class="comment">//此时引用了外部作用域的变量形成了闭包,闭包是看函数作用域，遵循就近原则</span></span><br><span class="line">  &#125;</span><br><span class="line">  test5()</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>定义a的值要看函数的作用域。函数的作用域遵循一个原则:就近原则，每次离他最近的两个花括号就是它的作用域</p>
+<ol start="4">
+<li><p>形式参数<br>  定义函数时定义的参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test6</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line"> <span class="comment">// x,y就是test6的形式参数 它可以是任意值，声明时的参数，本质上是变量声明，在创建函数时声明了两个变量，在调用函数时，变量赋值</span></span><br><span class="line"> <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数返回值和值是不同的</p>
+<ol start="5">
+<li>调用栈<br>一个函数语句要执行时经过的过程<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'aaa'</span>) <span class="comment">//当执行时 调用栈记录第一行然后 console 调用log函数，打印aaa返回到第一行</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>,add(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment">//调用栈记录第一行需要记录返回的路径，add(1,2)压栈，记录第二行，add函数执行完后console.log()压栈，打印函数返回值，然后出栈</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>调用栈是记录当前函数的调用的数据结构，每次调用就会储存一个记录，当函数返回就将记录弹出</p>
+<ol start="6">
+<li><p>递归<br>递归分为两个步骤，分为递和归</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test6</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n = <span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> n</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> n*test6(n<span class="number">-1</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//当n不等于1时 n=&gt;1的过程就是一个递进的过程 1=&gt;的过程就是一个归的过程</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>chrome浏览器调用栈大概是11434</li>
+<li>Node调用栈大小为12536 </li>
+<li>firfox调用栈最大</li>
+</ul>
+</li>
+<li>函数提升<br>当函数声明与var声明同时存在时，函数声明会提升到顶部，var声明在后边<br>函数表达式 var a = function(){} 是不会提升，函数声明会提升</li>
+<li><p>arguments<br>参数，除过箭头函数，每一个函数都有</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test7</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">arguments</span>)</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">test7()</span><br><span class="line"><span class="comment">// arguments是一个伪数组，没有数组的共同属性，就是伪数组arguments.__proto__ === Object.Prototype</span></span><br><span class="line"><span class="comment">//window 是this值</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>this是call的第一个参数</p>
+<ol>
+<li>不添加任何条件，this默认指向window 在use strict下是undefined</li>
+<li>call(this,arguments)明确this的值，call如果传入第一位不是对象，则JS会封装成对象给你call(1) 1会变成Number(1)</li>
+<li><p>在python中使用了self来代替this</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">person.sayhi() === sayhi.call(person) 这两个作用是相同的</span><br><span class="line">perso.sayhi()Js隐式传递到sayhi(person)</span><br><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line"> name:<span class="string">'jack'</span></span><br><span class="line"> <span class="comment">//不适用this就只能想python使用self传入给sayhi(self)</span></span><br><span class="line"> sayhi()&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在一个对象中定义一个函数，这个对象与函数完全没有关系</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>apply<br>apply与call相似<br>call(this,arguments) 传入的参数确定使用call<br>apply(this,[arguments]) 传入的参数不确定使用apply 参数是一个数组<br>两个作用是相同的，多使用call方法，明确this。<br>call(undefined,1,2,3) apply(undefined,[1,2,3])</p>
+</li>
+<li>bing绑定<br>fn.bind() = fn.call()作用是相似<br>bind的返回值是一个函数 fn.bind(1,1,3,4)()需要当做函数调用</li>
+</ol>
+</li>
+<li><p>箭头函数<br>箭头函数中没有this，没有arguments 本身没有this，但是它可以从它执行的上下文中获取this</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>)&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>立即执行函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个函数时让它立即执行</span></span><br><span class="line">! <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">&#125;()</span><br><span class="line"><span class="comment">//使用()时会变成(function()&#123;&#125;())会报错</span></span><br><span class="line"><span class="comment">//添加运算符不会产生bug，不添加运算符在执行时会产生bug</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/24/JS语法知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/09/24/JS语法知识/" itemprop="url">js的基本语法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T20:50:02+08:00">
+                2019-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="JS-的基本语法"><a href="#JS-的基本语法" class="headerlink" title="JS 的基本语法"></a>JS 的基本语法</h5><ol>
+<li>表达式与语句</li>
+</ol>
+<ul>
+<li>表达式是一般有值的,但有时候语句是改变当前环境也有值 1+3 是表达式<br>只有函数有返回值<br>1+2 的值是 3 1+2 没有返回值<br>值和返回值是不同的</li>
+</ul>
+<ol start="2">
+<li>标识符是用来起变量名字<br>标识符规则变量名命名规则<br>以\$，字母，下划线，中文，开始，就是不能以数字开始命名</li>
+<li>if else 条件语句<ul>
+<li>条件语句当 if 后面的条件为 true 则进入 if 后面代码块当条件为 false 时进入 fasle 代码块</li>
+<li>当 if 后面的代码块语句只有一个时可以使用 ?:表达式 a&gt;b？ a:b 这个语句就是如果 a&gt;b 则返回 a 否则返回 b</li>
+</ul>
+</li>
+<li><p>while 语句<br>while 语句,如果满足条件则一直执行当前代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (a &gt; b) &#123;&#125;</span><br><span class="line"><span class="comment">//形成死循环条件一直满足</span></span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>for 循环语句<br>for 循环相当于一个 while 循环</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//0,1,2,3,4,5</span></span><br><span class="line">  settimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;, <span class="number">0</span>);</span><br><span class="line">  <span class="comment">//就相当于</span></span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (i &lt; <span class="number">6</span>) &#123;</span><br><span class="line">    i++;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//当i满足条件时跳出循环，使用let声明变量时，在内部每次都会有一个新的变量i记录当前的值 i&lt;6时，for循环中一共生成了7个i</span></span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>break 和 continue<br>break 意思为跳出，打断，当满足当前条件时直接跳出循环<br>continue 继续下一个 next 下一个</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">//0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">//0,2,3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>label 标记标签</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//&#123;&#125;是label表示代码块</span></span><br><span class="line">&#123;</span><br><span class="line">  a: <span class="number">1</span><span class="comment">//不加分号就是一个对象，加上;就是一个语句a=1</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  a: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">a  = &#123;</span><br><span class="line">	b:<span class="number">1</span> <span class="comment">//对象</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在chrome浏览器中结果是一个对象 &#123;a:1&#125;,加上分号就是语句 a=1</span></span><br><span class="line"><span class="comment">//firfox中是一个1</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/20/瀑布流实现原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1313,385 +1804,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/04/06/jsonp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/04/06/jsonp/" itemprop="url">jsonp的实现原理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-06T19:29:10+08:00">
-                2019-04-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.jsonp实现跨域原理实现<br>  跨域：端口不通，协议不同，域名不同之间的数据交流都是跨域<br>  jsonp是使用script标签不会引起跨域的特性实现数据跨域交互<br>  在一个index.html文件中定义show()方法 function show(){}<br>  使用node.js搭建一个本地服务器，定义变量 scriptStr = ‘show()’,并添加一个if判断，如果请求的参数为/getscript，则发送scriptStrgei response.end(scriptStr)返回给客户端。在客户端script标签中添加src属性=’服务器启动地址’，当客户端刷新则请求服务器，服务器返回show()字符串，客户端则调用show()方法<br>2.callback解析<br>  导入url解析包， canst {pathname:url, query} = urlmodel.parse(req.url,true)<br>  新建一个data对象可以当作参数传入返回客户端中，客户端的方法参数默认data，输出data可以获取到这个对象<br>  在res.end()中发送拼接的模板字符串var scriptStr = ·${query.callback}(${JSON.stringify(data)})·可以向客户端传递对象</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/04/05/webpack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/04/05/webpack/" itemprop="url">webpack初体验</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-05T20:14:55+08:00">
-                2019-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.webpack的使用总结<br>  需要安装node.js程序，并在命令行中输入 node -v 出现正确的版本号<br>  建立项目文件夹，并在命令行中进入项目文件 例如CD project<br>  初始化 npm init -y<br>  安装 webpack npm install webpack –save-dev<br>  安装 webpack-cli npm install webpack-cli –save-dev<br>  新建文件夹src，dist，src是存放静态资源的文件夹。并存在一个index.js文件，这是一个入口文件，里面是依赖文件及其静态资源的引用 根目录下存在index.html文件对打包后的文件进行引用<br>  使用命令 npx webpack进行打包， 或在package.json中进行配置文件配置依赖项，配置webpack的打包模式<br>  index.js中支持ES6语法，主要是处理依赖项<br>  webpack.config.js配置文件。 引用path静态资源包。 配置打包文件的入口和打包文件的输出文件及文件名<br>  处理图片<br>  下载css文件处理器， npm install style-loader css-loader –save-dev<br>  并在配置文件中配置 module：use{}<br>  下载图片处理器， npm install –save-dev file-name  配置option属性：{设置打包的文件输出文件，名字，打包格式}</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/21/Css样式学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/03/21/Css样式学习/" itemprop="url">Css居中</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T20:14:36+08:00">
-                2019-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.使一个div标签在页面中居中，水平居中和垂直居中<br>    设置div为绝对定位 position:absolute<br>    设置top值与left值都为50% top:50%;left:50%;<br>    设定你的width与height的值，例如400px，200px。<br>    设定margin-left与margin-top的值为你设定的width与height负值的一半<br>    margin-left:-100px;margin-top:-200px<br>    设定边框的颜色可以让效果更明显：border 1px solid #0088pp</p>
-<p>   //另一种方法</p>
-<p>   使用绝对定位<br>   使用margin：auto ，并设置top left right bottom的值为相同的，例如0<br>2.使用JavaScript实现选择题测验并判断最终得分</p>
-<pre><code>在每一选项中设定一个value值
-再点击按钮中绑定事件可以获取点击按钮的value值，
-设定一个集合，并添加每道题目的正确选项
-例如arr[0]=&apos;A&apos;，判断点击取得的value值与arr值进行对比，如果相同则证明答对。
-设定一个var score = 0，在每次判断成功后score = score+1
-score的值就是答对的题目数。
-使用zepto.js获取当前点击按钮的value值
-$(&apos;button&apos;).click(function(){ var val = $(this).attr(&apos;value&apos;)})//val中储存了你点击获得的value的值
-使用if判断val与集合中的值是否相等
-</code></pre><p>3.单页面选择题实现，点击按钮后只更新题目与答案，其他内容不更新</p>
-<p>在一个div实现选择题区域，并且使用display：none属性隐藏div，display默认值是block，将第一个题设为display：block，<br>后面两道设置为display：none,并给选项按钮添加点击事件，判断第一题display值是block则将它重新赋值为none，并将第二题display赋值为block则会显示页面</p>
-<p>4.可以使用@font-face{font-family:’起一个名字’,src(字体文件位置)}引入字体文件，自定义字体</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/0730chen.github.io/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/0730chen.github.io/">1</a><span class="page-number current">2</span><a class="page-number" href="/0730chen.github.io/page/3/">3</a><a class="page-number" href="/0730chen.github.io/page/4/">4</a><a class="extend next" rel="next" href="/0730chen.github.io/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/0730chen.github.io/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/0730chen.github.io/">1</a><span class="page-number current">2</span><a class="page-number" href="/0730chen.github.io/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/0730chen.github.io/page/5/">5</a><a class="extend next" rel="next" href="/0730chen.github.io/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1737,7 +1854,7 @@ $(&apos;button&apos;).click(function(){ var val = $(this).attr(&apos;value&apos;
               
                 <a href="/0730chen.github.io/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1759,7 +1876,7 @@ $(&apos;button&apos;).click(function(){ var val = $(this).attr(&apos;value&apos;
               
               <div class="site-state-item site-state-tags">
                 <a href="/0730chen.github.io/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

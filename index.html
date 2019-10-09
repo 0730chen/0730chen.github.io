@@ -269,6 +269,425 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/10/09/算法入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/10/09/算法入门/" itemprop="url">算法入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-09T20:29:10+08:00">
+                2019-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="算法是解决问题的方法"><a href="#算法是解决问题的方法" class="headerlink" title="算法是解决问题的方法"></a>算法是解决问题的方法</h3><ol>
+<li><p>入门题，两个数值之间的比较</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">min</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//使用if判断 返回最小值</span></span><br><span class="line">	<span class="keyword">if</span>(num[<span class="number">0</span>]&lt;num[<span class="number">1</span>])&#123;</span><br><span class="line">		<span class="keyword">return</span> num[<span class="number">0</span>]</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> num[<span class="number">1</span>]</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> num[<span class="number">0</span>]&lt;num[i]? num[<span class="number">0</span>]:num[i] <span class="comment">//三元运算符</span></span><br><span class="line">	<span class="comment">//排序，小数在前大数在后</span></span><br><span class="line">	<span class="keyword">return</span> num[<span class="number">0</span>]&lt;num[<span class="number">1</span>] ?[num[<span class="number">0</span>],num[<span class="number">1</span>]]:[num[<span class="number">1</span>],num[<span class="number">0</span>]]</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用自带API</span></span><br><span class="line"><span class="built_in">Math</span>.min.call(<span class="literal">null</span>,num)<span class="comment">//返回最小值</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多个数据比较</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对长数据进行拆分</span></span><br><span class="line"><span class="keyword">let</span> num = [<span class="number">5</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>]</span><br><span class="line"><span class="comment">//已经实现了对两个数据进行比较的方法，多个数据思路如下</span></span><br><span class="line"><span class="keyword">let</span> num1 = [<span class="number">5</span>,[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>]]</span><br><span class="line"><span class="keyword">let</span> num2 = [<span class="number">3</span>,[<span class="number">4</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>]]</span><br><span class="line"><span class="keyword">let</span> num3 = [<span class="number">4</span>,[<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>]]</span><br><span class="line"><span class="keyword">let</span> num4 = [<span class="number">5</span>,[<span class="number">3</span>,<span class="number">2</span>]]</span><br><span class="line"><span class="comment">//将一个长数据变成两两比较的形式</span></span><br><span class="line"><span class="comment">//递归需要一个终止条件，否则会一直调用自己</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">min</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(num.length&gt;<span class="number">2</span>)&#123;</span><br><span class="line">		<span class="comment">//当数组长度大于2时，则将数组第一项与后面的所有值，当做一个两项数组</span></span><br><span class="line">		<span class="keyword">return</span> min(num[<span class="number">0</span>],min(num.slice(<span class="number">1</span>)))  <span class="comment">//slice(1)将第一项除去</span></span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">Math</span>.min.apply(<span class="literal">null</span>,num)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多个数据从小到大排序</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//长度为2的在上边min已经实现排序功能</span></span><br><span class="line"><span class="comment">//长度大于2的数据排序</span></span><br><span class="line"><span class="keyword">let</span> num = [<span class="number">5</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//获取数据中的最小值，和它的下标</span></span><br><span class="line">	<span class="keyword">let</span> minS = min(num)</span><br><span class="line">	<span class="keyword">let</span> index = num.indexOf(min)</span><br><span class="line">	<span class="comment">//获取最小值和下标后，将它放在数组第一位，与剩余数据concat连接</span></span><br><span class="line">	<span class="comment">//使用递归，找到一个最小值，将它位置splice,再重新排序</span></span><br><span class="line">	num.splice(index,<span class="number">1</span>)</span><br><span class="line">	<span class="keyword">return</span> [min].concat(sort(num))<span class="comment">//递归需要条件跳出，否则会一直执行</span></span><br><span class="line">	<span class="comment">//使用if判断 当num长度小于等于2时跳出递归</span></span><br><span class="line">	<span class="keyword">if</span>(num.length&gt;<span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">let</span> minS = min(num)</span><br><span class="line">		<span class="keyword">let</span> index = num.indexOf(min)</span><br><span class="line">		num.splice(index,<span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> [min].concat(sort(num))</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> min(num) <span class="comment">//两个数据进行排序</span></span><br><span class="line">		<span class="keyword">return</span> num[<span class="number">0</span>]&lt;num[<span class="number">1</span>] ? [num[<span class="number">0</span>],num[<span class="number">1</span>]]:[num[<span class="number">1</span>],num[<span class="number">0</span>]] <span class="comment">//两种方式都可以</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/10/09/算法入门（二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/10/09/算法入门（二）/" itemprop="url">算法入门(二)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-09T20:29:03+08:00">
+                2019-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>使用迭代实现了排序算法</li>
+</ol>
+<ul>
+<li>思路<br>获取全部数据的最小值，然后在使用 splice，获取除过这一个值之外的剩余的之中的最小值，将每次获得的最小值使用 concat 连接成新数组.每次选择出最小的值，排好序就是选择排序</li>
+</ul>
+<ol start="2">
+<li>使用 for 循环实现选择排序算法</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//for循环将第一次查找的最小值的下标不和I相同，则交换两个数值的位置</span></span><br><span class="line"><span class="comment">//找出数组最小值的下标</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">minIndex</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> index = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; num.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num[i] &lt; num[index]) &#123;</span><br><span class="line">      index = i;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> index;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//交换数组中两个数据的位置</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">array, i, j</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> temp = array[i];</span><br><span class="line">  array[i] = array[j];</span><br><span class="line">  array[j] = array[i];</span><br><span class="line">  <span class="comment">//这里是地址传递，值传递数据本身是不会变得，变化的是值的拷贝</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="comment">//找到最小下标</span></span><br><span class="line">    <span class="built_in">console</span>.log(i + <span class="string">"----"</span>); <span class="comment">//打印循环次数</span></span><br><span class="line">    <span class="keyword">let</span> index = minIndex(num.slice(i)) + i; <span class="comment">//找最小值的下标，每循环忽略之前排列好的数据，使用slice(i).由于每次都是一个新数组，所以下标值少了i个所以要加上i</span></span><br><span class="line">    <span class="keyword">if</span> (index !== i) &#123;</span><br><span class="line">      <span class="comment">//如果最小的下标与i不相等，则将index,与i交换位置</span></span><br><span class="line">      swap(num, index, i);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>快速排序(递归)<br>以一个值为基准，小的往前，大的往后</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//快速排序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (num.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">  &#125; <span class="comment">//数组长度为1时则直接返回这个数组</span></span><br><span class="line">  <span class="keyword">let</span> pivotIndex = <span class="built_in">Math</span>.floor(num.length / <span class="number">2</span>); <span class="comment">//向下取最近的一个整数 选择一个基准数</span></span><br><span class="line">  <span class="keyword">let</span> pivot = num.splice(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>]; <span class="comment">//每次取值都需要将基准数取出来 splice取出来后还是一个数组</span></span><br><span class="line">  <span class="keyword">let</span> left = [];</span><br><span class="line">  <span class="keyword">let</span> right = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num[i] &lt; pivot) &#123;</span><br><span class="line">      left.push(num[i]);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      right.push(num[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> quickSort(left).concat([pivot], quickSort(right));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>归并排序 merge 排序(递归实现)<br>当数组为 1 的时候，是排好序的，因为它只有一个数，所以是排好序的<br>merge 连接，是最主要的内容</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//并归排序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (num.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> num; <span class="comment">//当数组长度为1则默认排好序</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> left = num.slice(<span class="number">0</span>, <span class="built_in">Math</span>.floor(num.length / <span class="number">2</span>)); <span class="comment">//Slice返回数组的一部分</span></span><br><span class="line">  <span class="keyword">let</span> right = num.slice(<span class="built_in">Math</span>.floor(num.length / <span class="number">2</span>));</span><br><span class="line">  <span class="keyword">return</span> merge(mergeSort(left), mergeSort(right));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实现merge连接数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//接受两个数组</span></span><br><span class="line">  <span class="keyword">if</span> (a.length === <span class="number">0</span>) <span class="keyword">return</span> b;</span><br><span class="line">  <span class="keyword">if</span> (b.length === <span class="number">0</span>) <span class="keyword">return</span> a;</span><br><span class="line">  <span class="comment">//比较两个数组第一项的大小</span></span><br><span class="line">  <span class="comment">//a[0]&gt;b[0]，则将b[0]放在第一位连接a,除过b的第一个剩余的值</span></span><br><span class="line">  <span class="comment">//a[0]&lt;b[0]，则将a[0]放在第一位，对剩余的a除过第一位与b进行这个操作</span></span><br><span class="line">  <span class="keyword">return</span> a[<span class="number">0</span>] &gt; b[<span class="number">0</span>]</span><br><span class="line">    ? [b[<span class="number">0</span>]].concat(merge(a, b.slice(<span class="number">1</span>)))</span><br><span class="line">    : [a[<span class="number">0</span>]].concat(merge(a.slice(<span class="number">1</span>), b));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>计数排序<br>使用哈希表(哈希表是一种 key value 形成的键值对数据)，记录 MAX 与 key value<br>遍历哈希表，如果存在，则放入空数组中，遍历数组，遍历哈希表。<br>如果存在两个相同的数字，出现几次就要 push 几次</li>
+</ol>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countSort</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> hash = &#123;&#125;</span><br><span class="line">  <span class="keyword">let</span> Max = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> arr = []</span><br><span class="line">  <span class="comment">//循环遍历数组，判断是否在hash中存在，不存在则加入hash中，key为数组值，值为1，遇到相同的数，则值+1</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;num.length;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!(num[i] <span class="keyword">in</span> hash))&#123;</span><br><span class="line">      hash[num[i]] = <span class="number">1</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      hash[num[i]] +=<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(num[i] &gt;Max)&#123;Max = num[i]&#125;</span><br><span class="line">  &#125;</span><br><span class="line"> <span class="comment">//hash组织完成后遍历hash</span></span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">let</span> j =<span class="number">0</span>;j&lt;=Max;j++)&#123;</span><br><span class="line">   <span class="keyword">if</span>(j <span class="keyword">in</span> hash)&#123;</span><br><span class="line">     <span class="comment">//判断j是否存在hash中，如果存在在取得hash[j]的值，值为几，最终在数组中就要push几次</span></span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>;i&lt;hash[j];i++)&#123;</span><br><span class="line">       arr.push(j)</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/10/09/JavaScript的诞生/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/10/09/JavaScript的诞生/" itemprop="url">JavaScript的诞生</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-09T20:29:00+08:00">
+                2019-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Js的诞生"><a href="#Js的诞生" class="headerlink" title="Js的诞生"></a>Js的诞生</h3><pre><code>JavaScript是JS语言，有明确的语法，数据类型
+ES是规则是JavaScript的标准规则，他两之间不是包含关系
+</code></pre><ol>
+<li>Js的基本特点<br> 是一种解释性脚本语言(代码不用进行预编译)<br> 主要应用在网页端<br> 可以跨平台使用</li>
+<li><p>Js的设计思路</p>
+<ol>
+<li>借鉴C语言的基本语法</li>
+<li>借鉴Java的数据类型和内存管理</li>
+<li>借鉴scheme语言，将函数提升到一等公民</li>
+<li>借鉴 self语言，使用基于原型继承的机制 prototype</li>
+</ol>
+</li>
+<li><p>Js在设计之初存在的10个缺陷</p>
+<ol>
+<li>不合适开发大型应用程序：没有模块化，允许同名函数的重复定义，后面定义可以覆盖前面定义</li>
+<li>标准库非常小，很多功能还不具备</li>
+<li>null与undefined： null属于object的一种，undefined是未定义，是一种数据类型</li>
+<li>全局变量:在JS中，全局变量是所有模块中都可见的，函数内容也可以生成全局变量</li>
+<li>自动插入行尾分号：js语句必须以分号结尾，但是如果你忘记加上分号，解释器在运行时会自动加上分号。</li>
+<li>加号运算符 : 当数字与字符串相加，会将数字当成字符串然后拼接。两种不同类型的数据可以相加，不会报错</li>
+<li>NaN:是一种数字，表示了超过解释器极限的数字 ，NaN === NaN  //false</li>
+<li>数组和对象的区分:js中数组也是属于对象</li>
+<li><p>== 与===： == 在某些情况下不够严谨，往后使用 === 代替 == 比如 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[] ==&apos;&apos; //true</span><br><span class="line">[] ==0</span><br><span class="line">0 ==&apos;&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Javascript的基本类型包装对象：字符串，number，布尔，symbol，基本类型是基本类型，基本类型的包装对象是对象</p>
+</li>
+</ol>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/29/JS对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1242,502 +1661,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/24/浏览器渲染原理及Css动画/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/09/24/浏览器渲染原理及Css动画/" itemprop="url">浏览器渲染原理及Css动画</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T20:50:47+08:00">
-                2019-09-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="浏览器的渲染原理"><a href="#浏览器的渲染原理" class="headerlink" title="浏览器的渲染原理"></a>浏览器的渲染原理</h4><ol>
-<li>进程与线程<ul>
-<li>进程：启动一个应用时，计算机会启动一个进程，然后分配内存</li>
-<li>线程：在创建线程后，也会创建线程用来辅助进程。<br>总结：进程包含线程 一个进程可以包含多个线程，进程的内存是线程共享的.</li>
-</ul>
-</li>
-<li><p>渲染步骤</p>
-<ul>
-<li>Html =&gt; 构建Html Dom树 =&gt;构建 Css树 =&gt; 然后将Dom树与Css树合并成渲染树 =&gt; 然后是定位，布局 ，盒模型，尺寸大小 =&gt; paint绘制（顺序是背景色，背景图，border children outline ） =&gt; 层叠合成</li>
-</ul>
-</li>
-<li><p>经典面试题</p>
-<ul>
-<li>从浏览器输入URL中按回车到页面显示过程中发生了什么<ol>
-<li>浏览器根据URL进行DNS查询<ul>
-<li>首页从DNS缓存中查询</li>
-<li>未在缓存中找到，则不停的向上一级请求DNS服务器</li>
-</ul>
-</li>
-<li>DNS将域名解析成IP地址后建立TCP连接（三次握手，四次挥手）<ul>
-<li>主要作用是保证数据信息传输的可靠性</li>
-</ul>
-</li>
-<li>构建HTTP请求报文<ul>
-<li>添加HTTP首部</li>
-<li>根据同源策略添加cookie</li>
-</ul>
-</li>
-<li>在TCP连接上发送HTTP报文，等待响应</li>
-<li>服务器处理HTTP请求报文，返回响应HTTP响应报文</li>
-<li>浏览器处理返回的HTTP响应报文，开始渲染页面<br>构建DOM树=&gt;构建Css树=&gt;合成渲染树=&gt;定位布局=&gt;paint绘制页面=&gt;层叠合成 用户就能看到页面了</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>URL中锚点后面的数据和值是不不会发送到后端服务器</li>
-<li>css动画<ol>
-<li>transition 过渡动画 是一段两个事件节点之间的过程<ul>
-<li>transition 属性名，时间 s为单位，过渡方式  延迟多久<br>ease默认 liner线性 inherit (经常使用)</li>
-<li>transform 变换 <ol>
-<li>rotate()旋转，接受一个角度值<ol start="2">
-<li>translate() 位移，将元素移动 接受一个像素值</li>
-<li>scale() 缩放 放大缩小，默认是1</li>
-<li>skew()扭曲变形 接受一个角度值</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>animation 动画是定义关键帧的状态来时间动画效果，可以控制关键帧的播放时间长等功能<br>@keyframe 动画名 定义关键帧的所处的状态的样式<br>使用  animation:动画名 时间 过渡函数<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-tag">animation-name</span>:动画名称 <span class="selector-tag">heart</span></span><br><span class="line"><span class="selector-tag">animation-duration</span>:动画执行时间 5<span class="selector-tag">S</span></span><br><span class="line"><span class="selector-tag">animation-timing-fuction</span>:是过渡函数 线性 先快后慢....</span><br><span class="line"><span class="selector-tag">animation-delay</span>:动画延迟时间，设置为负数则表示当前动画被截断</span><br><span class="line"><span class="selector-tag">animation-iteration-count</span><span class="selector-pseudo">:infinite</span> 动画执行次数 <span class="selector-tag">infinite</span>表示一直执行</span><br><span class="line"><span class="selector-tag">animation-direction</span><span class="selector-pseudo">:normal</span> 动画反向变化</span><br><span class="line"><span class="selector-tag">animation-fill-mode</span><span class="selector-pseudo">:forwards</span> 动画保持开始或者结束时的样式</span><br><span class="line"><span class="selector-tag">animation-play-state</span><span class="selector-pseudo">:running</span> 动画暂停或者运行</span><br><span class="line"><span class="selector-tag">animation</span><span class="selector-pseudo">:heart</span> 5<span class="selector-tag">s</span> <span class="selector-tag">linear</span> 2<span class="selector-tag">s</span> <span class="selector-tag">infinite</span> <span class="selector-tag">alternate-reverse</span> </span><br><span class="line"></span><br><span class="line">@<span class="keyword">keyframes</span> heart&#123;</span><br><span class="line">	0%&#123;</span><br><span class="line">		<span class="attribute">transform</span>:<span class="built_in">scale</span>(1)</span><br><span class="line">	&#125;</span><br><span class="line">	50%&#123;</span><br><span class="line">		<span class="attribute">transform</span>:<span class="built_in">scale</span>(1.2)</span><br><span class="line">	&#125;</span><br><span class="line">	75%&#123;</span><br><span class="line">		<span class="attribute">transform</span>:<span class="built_in">scale</span>(1.2)</span><br><span class="line">	&#125;</span><br><span class="line">	100%&#123;</span><br><span class="line">		<span class="attribute">transform</span>:<span class="built_in">scale</span>(1)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/24/JS函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/09/24/JS函数/" itemprop="url">JS函数知识点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T20:50:05+08:00">
-                2019-09-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="Js-函数详解"><a href="#Js-函数详解" class="headerlink" title="Js 函数详解"></a>Js 函数详解</h5><ol>
-<li><p>引用时机<br>函数的引用时机决定了函数的值，引用时机不同，值也就不同<br>直接调用 test1()输出的 a 的值是 1，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">test1(); <span class="comment">//1</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">test1(); <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>函数作用域<br>函数的作用域是定义函数是所处的两个花括号之间<br>全局变量：1.在顶级作用域声明的变量就是全局变量，例如 a 就是全局变量 2. 在 window 上的变量是全局变量<br>局部变量: 在函数作用域声明的变量是局部变量<br>作用域嵌套：当一个作用域内部又出现一个作用域时，叫做作用域嵌套<br>静态作用域:也叫做词法作用域，作用域与函数的执行无关</p>
-</li>
-<li><p>闭包<br> 当一个函数要使用外部作用域的值时就出现了闭包</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"> <span class="built_in">window</span>.a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="comment">//花括号之间的内容都属于test2函数的作用域</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test3</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">test4</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> b = <span class="number">1</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">test5</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(b)<span class="comment">//此时引用了外部作用域的变量形成了闭包,闭包是看函数作用域，遵循就近原则</span></span><br><span class="line">  &#125;</span><br><span class="line">  test5()</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>定义a的值要看函数的作用域。函数的作用域遵循一个原则:就近原则，每次离他最近的两个花括号就是它的作用域</p>
-<ol start="4">
-<li><p>形式参数<br>  定义函数时定义的参数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test6</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line"> <span class="comment">// x,y就是test6的形式参数 它可以是任意值，声明时的参数，本质上是变量声明，在创建函数时声明了两个变量，在调用函数时，变量赋值</span></span><br><span class="line"> <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>函数返回值和值是不同的</p>
-<ol start="5">
-<li>调用栈<br>一个函数语句要执行时经过的过程<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'aaa'</span>) <span class="comment">//当执行时 调用栈记录第一行然后 console 调用log函数，打印aaa返回到第一行</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>,add(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment">//调用栈记录第一行需要记录返回的路径，add(1,2)压栈，记录第二行，add函数执行完后console.log()压栈，打印函数返回值，然后出栈</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>调用栈是记录当前函数的调用的数据结构，每次调用就会储存一个记录，当函数返回就将记录弹出</p>
-<ol start="6">
-<li><p>递归<br>递归分为两个步骤，分为递和归</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test6</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n = <span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> n</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> n*test6(n<span class="number">-1</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//当n不等于1时 n=&gt;1的过程就是一个递进的过程 1=&gt;的过程就是一个归的过程</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>chrome浏览器调用栈大概是11434</li>
-<li>Node调用栈大小为12536 </li>
-<li>firfox调用栈最大</li>
-</ul>
-</li>
-<li>函数提升<br>当函数声明与var声明同时存在时，函数声明会提升到顶部，var声明在后边<br>函数表达式 var a = function(){} 是不会提升，函数声明会提升</li>
-<li><p>arguments<br>参数，除过箭头函数，每一个函数都有</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test7</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">arguments</span>)</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">test7()</span><br><span class="line"><span class="comment">// arguments是一个伪数组，没有数组的共同属性，就是伪数组arguments.__proto__ === Object.Prototype</span></span><br><span class="line"><span class="comment">//window 是this值</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>this是call的第一个参数</p>
-<ol>
-<li>不添加任何条件，this默认指向window 在use strict下是undefined</li>
-<li>call(this,arguments)明确this的值，call如果传入第一位不是对象，则JS会封装成对象给你call(1) 1会变成Number(1)</li>
-<li><p>在python中使用了self来代替this</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">person.sayhi() === sayhi.call(person) 这两个作用是相同的</span><br><span class="line">perso.sayhi()Js隐式传递到sayhi(person)</span><br><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line"> name:<span class="string">'jack'</span></span><br><span class="line"> <span class="comment">//不适用this就只能想python使用self传入给sayhi(self)</span></span><br><span class="line"> sayhi()&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在一个对象中定义一个函数，这个对象与函数完全没有关系</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>apply<br>apply与call相似<br>call(this,arguments) 传入的参数确定使用call<br>apply(this,[arguments]) 传入的参数不确定使用apply 参数是一个数组<br>两个作用是相同的，多使用call方法，明确this。<br>call(undefined,1,2,3) apply(undefined,[1,2,3])</p>
-</li>
-<li>bing绑定<br>fn.bind() = fn.call()作用是相似<br>bind的返回值是一个函数 fn.bind(1,1,3,4)()需要当做函数调用</li>
-</ol>
-</li>
-<li><p>箭头函数<br>箭头函数中没有this，没有arguments 本身没有this，但是它可以从它执行的上下文中获取this</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>)&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>立即执行函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个函数时让它立即执行</span></span><br><span class="line">! <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">&#125;()</span><br><span class="line"><span class="comment">//使用()时会变成(function()&#123;&#125;())会报错</span></span><br><span class="line"><span class="comment">//添加运算符不会产生bug，不添加运算符在执行时会产生bug</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/24/JS语法知识/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/09/24/JS语法知识/" itemprop="url">js的基本语法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T20:50:02+08:00">
-                2019-09-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="JS-的基本语法"><a href="#JS-的基本语法" class="headerlink" title="JS 的基本语法"></a>JS 的基本语法</h5><ol>
-<li>表达式与语句</li>
-</ol>
-<ul>
-<li>表达式是一般有值的,但有时候语句是改变当前环境也有值 1+3 是表达式<br>只有函数有返回值<br>1+2 的值是 3 1+2 没有返回值<br>值和返回值是不同的</li>
-</ul>
-<ol start="2">
-<li>标识符是用来起变量名字<br>标识符规则变量名命名规则<br>以\$，字母，下划线，中文，开始，就是不能以数字开始命名</li>
-<li>if else 条件语句<ul>
-<li>条件语句当 if 后面的条件为 true 则进入 if 后面代码块当条件为 false 时进入 fasle 代码块</li>
-<li>当 if 后面的代码块语句只有一个时可以使用 ?:表达式 a&gt;b？ a:b 这个语句就是如果 a&gt;b 则返回 a 否则返回 b</li>
-</ul>
-</li>
-<li><p>while 语句<br>while 语句,如果满足条件则一直执行当前代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (a &gt; b) &#123;&#125;</span><br><span class="line"><span class="comment">//形成死循环条件一直满足</span></span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>for 循环语句<br>for 循环相当于一个 while 循环</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//0,1,2,3,4,5</span></span><br><span class="line">  settimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;, <span class="number">0</span>);</span><br><span class="line">  <span class="comment">//就相当于</span></span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (i &lt; <span class="number">6</span>) &#123;</span><br><span class="line">    i++;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//当i满足条件时跳出循环，使用let声明变量时，在内部每次都会有一个新的变量i记录当前的值 i&lt;6时，for循环中一共生成了7个i</span></span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>break 和 continue<br>break 意思为跳出，打断，当满足当前条件时直接跳出循环<br>continue 继续下一个 next 下一个</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">//0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (i === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(i); <span class="comment">//0,2,3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>label 标记标签</p>
-</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//&#123;&#125;是label表示代码块</span></span><br><span class="line">&#123;</span><br><span class="line">  a: <span class="number">1</span><span class="comment">//不加分号就是一个对象，加上;就是一个语句a=1</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">  a: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">a  = &#123;</span><br><span class="line">	b:<span class="number">1</span> <span class="comment">//对象</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在chrome浏览器中结果是一个对象 &#123;a:1&#125;,加上分号就是语句 a=1</span></span><br><span class="line"><span class="comment">//firfox中是一个1</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/0730chen.github.io/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/0730chen.github.io/page/4/">4</a><a class="extend next" rel="next" href="/0730chen.github.io/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/0730chen.github.io/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/0730chen.github.io/page/5/">5</a><a class="extend next" rel="next" href="/0730chen.github.io/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1783,7 +1711,7 @@
               
                 <a href="/0730chen.github.io/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1805,7 +1733,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/0730chen.github.io/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
