@@ -269,6 +269,758 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/21/Css样式学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/03/21/Css样式学习/" itemprop="url">Css居中</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T20:14:36+08:00">
+                2019-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.使一个div标签在页面中居中，水平居中和垂直居中<br>    设置div为绝对定位 position:absolute<br>    设置top值与left值都为50% top:50%;left:50%;<br>    设定你的width与height的值，例如400px，200px。<br>    设定margin-left与margin-top的值为你设定的width与height负值的一半<br>    margin-left:-100px;margin-top:-200px<br>    设定边框的颜色可以让效果更明显：border 1px solid #0088pp</p>
+<p>   //另一种方法</p>
+<p>   使用绝对定位<br>   使用margin：auto ，并设置top left right bottom的值为相同的，例如0<br>2.使用JavaScript实现选择题测验并判断最终得分</p>
+<pre><code>在每一选项中设定一个value值
+再点击按钮中绑定事件可以获取点击按钮的value值，
+设定一个集合，并添加每道题目的正确选项
+例如arr[0]=&apos;A&apos;，判断点击取得的value值与arr值进行对比，如果相同则证明答对。
+设定一个var score = 0，在每次判断成功后score = score+1
+score的值就是答对的题目数。
+使用zepto.js获取当前点击按钮的value值
+$(&apos;button&apos;).click(function(){ var val = $(this).attr(&apos;value&apos;)})//val中储存了你点击获得的value的值
+使用if判断val与集合中的值是否相等
+</code></pre><p>3.单页面选择题实现，点击按钮后只更新题目与答案，其他内容不更新</p>
+<p>在一个div实现选择题区域，并且使用display：none属性隐藏div，display默认值是block，将第一个题设为display：block，<br>后面两道设置为display：none,并给选项按钮添加点击事件，判断第一题display值是block则将它重新赋值为none，并将第二题display赋值为block则会显示页面</p>
+<p>4.可以使用@font-face{font-family:’起一个名字’,src(字体文件位置)}引入字体文件，自定义字体</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/18/JS继承/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/03/18/JS继承/" itemprop="url">JS继承</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T22:18:33+08:00">
+                2019-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>JavaScipt对象与继承关系<br>1.构建构造函数<br>  function Foo(){}<br>2.创建实例对象<br>  var f = new Foo()<br>  var o = new Object()</p>
+<p>Foo.prototype与f.<strong>proto</strong>指向相同的构造函数F.<br>Foo.prototype.<strong>proto</strong>指向了Obejct.prototype<br>o.<strong>proto</strong>也指向了Object.prototype<br>instance-&gt;<strong>proto</strong>-&gt;person.prototype-&gt;constructor&lt;-person.prototype-&gt;function Person(){}-&gt;Object()-&gt;window</p>
+<p>3.继承<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Brick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.width = <span class="number">10</span></span><br><span class="line">	<span class="keyword">this</span>.height =<span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line">使用继承方式</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">BlueGlassBrick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	Brick.call(<span class="keyword">this</span>)</span><br><span class="line">	<span class="keyword">this</span>.opacity = <span class="number">0.5</span>  添加的新属性</span><br><span class="line">	<span class="keyword">this</span>.color = <span class="string">'blue'</span> </span><br><span class="line">&#125;</span><br><span class="line">Brick.prototype.xxx = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">	给原型添加新方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>新建的构建起BlueGlassBrick()默认有一个空的原型属性。<br>使BlueGlassBrick()构造器从Brick()中继承方法，使原型属性指向Brick.prototype的原型属性,使用Object的create方法创建一个和Brick.prototype相同的原型属性并赋值给新构造的空原型属性<br>BlueGlassBrick.prototype = Object.create(Brick.prototype)<br>这个时候BlueGlassBrick.prototype.constructor指向的是Brick()<br>然后在使BlueGlassBrick.prototype.constructor = BlueGlassBrick<br>var s = new BlueGlassBrick（）构建的s对象也有了xxx方法</p>
+<p>客户端储存</p>
+<p>1.cookies储存数据<br>2.Web storage<br>localStorage在浏览器中储存数据<br>localStorage.setItem(‘name’,’chris’)添加数据<br>Storage.getItem()接受一个参数并返回数据<br>localStroage.removeItem(‘’)接受一个参数并删除一组数据<br>关闭浏览器之后再打开也可以访问<br>sessionStorage为页面会话期间可用的每个给定源一个单独的储存区域，只要浏览器处于打开状态就会存在，浏览器关闭之后就会删除数据</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/16/canvas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/03/16/canvas/" itemprop="url">canvas学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-16T21:25:25+08:00">
+                2019-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Canvas学习<br>使用Canvas绘制图形<br>1.首先在网页中创建一个画布在HTML加入canvas标签</p>
+<p><canvas width="320" height="320" class="mycanvas"></canvas><br>设定画布的高度和宽度,在HTML中生成画布，使用JS操纵元素生成想要的效果。</p>
+<p>2.获取画布<br>var canvas = document.querySelector(‘.mycanvas’)<br>var width = canvas.width = window.innerWidth<br>var height = canvas.height = window.innerHeight<br>将窗口宽度和高度赋值给画布的宽度和高度。整个窗口就是画布。<br>使用getContext()方法获得2d或者3d画布。<br>var ctx  = convas.getContext(‘2d’) ctx变量中保存了2d画布<br>ctx.fillStyle = ‘rgb(0,0,0)’  fillStyle属性使画布填充一个颜色<br>ctx.fillRect(0,0,width,height) fillRect()绘制一个覆盖整个区域的矩形<br>0，0 代表的意思是距离左上角的距离，width，height代表的是矩形的长和宽</p>
+<p>fillStyle=’’填充颜色 接受一个字符串 fillRect()绘制一个矩形，接受4个参数<br>fillStyle = ‘rgba(1,1,1,0.25)’,前3个参数是颜色，最后一个参数是透明度，透明度越高，底层就越清晰</p>
+<p>3.画线条<br>获取画布<br>var canvas = document.querySelector(‘.mycanvas’)<br>var ctx = canvas.getContext(‘2d’)</p>
+<p>ctx.strokeStyle = ‘rgb()’ 设定线条颜色<br>ctx.lineWidth = 5   设定线条的像素，默认为1<br>ctx.strokeRect = () 4个参数，设定线条距离左上角距离，和线条的宽高</p>
+<p>4.绘制路径<br>beginPath():在钢笔当前所在位置开始绘制，在新画布中起始位置为（0，0）<br>moveTo()：将港币移动至另一个点，将钢笔跳至该点。 ctx.moveTo(50,59)<br>fill()：填充通过为当前所绘制的路径区域填充一个颜色来形成图案 ctx.fill()<br>stroke():通过为当前绘制路径的区域描边，来绘制一个边框形状 ctx.stroke（）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/15/构造函数及继承/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/03/15/构造函数及继承/" itemprop="url">json学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-15T10:33:55+08:00">
+                2019-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.Json学习<br>  Json是一种数据格式，没有属性也没有方法。是对象<br>  Json对象可以和字符串进行转换。<br>  Json转换成字符串。 Json.paren(Json),返回的是一个Json对象<br>  Json对象使用Json.stringify(Json对象),返回一个字符串</p>
+<p>2.请求Json数据<br>  建立变量保存要访问的网址,例如：var requestUrl = ‘网址’<br>  创建Http请求，var request = new XMLHttpRequest()<br>  使用open()方法，request.open(‘GET’,requestURL)<br>  设定<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">request.responseType = <span class="string">'json'</span> 发送请求request.send()</span><br><span class="line">request.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="keyword">var</span> superHeroes = request.response <span class="comment">//response响应的数据</span></span><br><span class="line">   populateHeader(superHeroes)</span><br><span class="line">   showHeroes(superHeroes)</span><br><span class="line">   <span class="comment">//使用两个函数对响应的数据进行处理</span></span><br><span class="line">&#125; <span class="comment">//处理请求的响应</span></span><br></pre></td></tr></table></figure></p>
+<p>  3.定义处理函数<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">populateHeader</span>(<span class="params">jsonObj</span>) </span>&#123;</span><br><span class="line">    	<span class="keyword">var</span> myH1 = <span class="built_in">document</span>.createElement(<span class="string">'h1'</span>)</span><br><span class="line">    	myH1.textContent = jsonObj[<span class="string">'squadName'</span>]</span><br><span class="line">    	header.appendChlid(myH1)</span><br><span class="line"></span><br><span class="line">    	<span class="keyword">var</span> myPara = <span class="built_in">document</span>.createElemnet(<span class="string">'p'</span>)</span><br><span class="line">    	myPara.textContent = <span class="string">'Hometown: '</span> + jsonObj[<span class="string">'homeTown'</span>] + <span class="string">' // Formed: '</span> + jsonObj[<span class="string">'formed'</span>];</span><br><span class="line">    	header.appendChild(myPara)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">showHeroes</span>(<span class="params">jsonObj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> heroes = jsonObj[<span class="string">'members'</span>];</span><br><span class="line">      </span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; heroes.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> myArticle = <span class="built_in">document</span>.createElement(<span class="string">'article'</span>);</span><br><span class="line">    <span class="keyword">var</span> myH2 = <span class="built_in">document</span>.createElement(<span class="string">'h2'</span>);</span><br><span class="line">    <span class="keyword">var</span> myPara1 = <span class="built_in">document</span>.createElement(<span class="string">'p'</span>);</span><br><span class="line">    <span class="keyword">var</span> myPara2 = <span class="built_in">document</span>.createElement(<span class="string">'p'</span>);</span><br><span class="line">    <span class="keyword">var</span> myPara3 = <span class="built_in">document</span>.createElement(<span class="string">'p'</span>);</span><br><span class="line">    <span class="keyword">var</span> myList = <span class="built_in">document</span>.createElement(<span class="string">'ul'</span>);</span><br><span class="line"></span><br><span class="line">    myH2.textContent = heroes[i].name;</span><br><span class="line">    myPara1.textContent = <span class="string">'Secret identity: '</span> + heroes[i].secretIdentity;</span><br><span class="line">    myPara2.textContent = <span class="string">'Age: '</span> + heroes[i].age;</span><br><span class="line">    myPara3.textContent = <span class="string">'Superpowers:'</span>;</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">var</span> superPowers = heroes[i].powers;</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; superPowers.length; j++) &#123;</span><br><span class="line">      <span class="keyword">var</span> listItem = <span class="built_in">document</span>.createElement(<span class="string">'li'</span>);</span><br><span class="line">      listItem.textContent = superPowers[j];</span><br><span class="line">      myList.appendChild(listItem);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    myArticle.appendChild(myH2);</span><br><span class="line">    myArticle.appendChild(myPara1);</span><br><span class="line">    myArticle.appendChild(myPara2);</span><br><span class="line">    myArticle.appendChild(myPara3);</span><br><span class="line">    myArticle.appendChild(myList);</span><br><span class="line"></span><br><span class="line">    section.appendChild(myArticle);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4.JS构造函数的继承方法<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;        <span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params"></span>) </span>&#123;<span class="keyword">this</span>.name = name&#125;</span><br><span class="line">  <span class="keyword">this</span>.species = <span class="string">'动物'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//构造函数绑定继承</span></span><br><span class="line">    把子类的<span class="keyword">this</span>对象传到Animal方法中，然后将父类的属性绑定到子类的<span class="keyword">this</span>中</span><br><span class="line"></span><br><span class="line">    Animal.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line"></span><br><span class="line">    funtion Cat(name,color) &#123;</span><br><span class="line">       Animal.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">       <span class="keyword">this</span>,name = name</span><br><span class="line">       <span class="keyword">this</span>.color = color</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">'mao'</span>,<span class="string">'red'</span>)</span><br><span class="line">    alert(cat1.species)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//prototype模式(常用)</span></span><br><span class="line">      Cat.prototype = Animal.prototype</span><br><span class="line">      Cat.prototype.constructor = Cat</span><br><span class="line">      <span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">''</span>,<span class="string">''</span>)</span><br><span class="line">      cat1.species</span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用空对象作为中介</span></span><br><span class="line">      <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">      F.prototype = Animal.prototype;</span><br><span class="line">      Cat.prototype = <span class="keyword">new</span> F();</span><br><span class="line">      Cat.prototype.constructor = Cat;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//直接继承prototype</span></span><br><span class="line"></span><br><span class="line">      Cat.prototype = Animal.prototype</span><br><span class="line">      Cat.prototype.constructor = Cat</span><br><span class="line">      ......</span><br><span class="line"></span><br><span class="line">    <span class="comment">//拷贝继承，将要继承的属性和方法通过拷贝到子对象，完成继承</span></span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/14/箭头函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/03/14/箭头函数/" itemprop="url">箭头函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-14T13:20:00+08:00">
+                2019-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.箭头函数<br>  相当于匿名函数，对函数声明简化。形式是 x=&gt; {},x是参数，后面中的大括号是函数体，如果参数不是一个，则需要大括号。<br>  （1 能够让函数声明更加简短<br>  （2 不绑定this<br>2.Promise<br>  用于异步任务，可以作为对象也可以作为方法。有三个状态<br>  1.pending初始状态，既不是成功也不是失败<br>  2.fulfilled操作成功<br>  3.rejected意味着操作失败。<br>  new Promise(function(resolve, reject))<br>  调用resolve与reject函数被调用则状态立马改变。</p>
+<p>  一般是想让一个函数有Promise功能则让函数返回一个Promise对象</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/11/常见css布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/03/11/常见css布局/" itemprop="url">活动页布局</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T21:22:48+08:00">
+                2019-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.活动页面的原理<br>  主要使用overflow：hidden隐藏超出的页面，给整个页面在一个div标签中，div赋值设置top（向下翻页）或者left（向右翻页），每一页都是固定的距离。这样可以在一个html文件中完成多个页面的展示。<br>2.图片库原理<br>  使用div标签建立一个大图展示区域，分别使用div建立小图展示区域。给小图定位赋值使用float：left属性，向左浮动，使他们排成一列。简单的页面布置就这样成功了，再加入图片的时候，使用createElement（’img’）方法建立img标签，并建立for循环，使用setattribute（’src’,路径）由于路径是字符串，所以要使用拼接字符串的方式，提前将图片的名称设置为1-5.jpg。</p>
+<p>  实现点击小图更新相应的大图<br>    给小图区域的父元素绑定一个onclick事件，本来是要给每一个img绑定事件，这里使用了事件冒泡，内部子元素要绑定相同的事件，则可以绑定在他们的父元素上，事件也可以触发，减少代码量。使用getattribute（’src’）方法获取当前点击图片的src路径。，并使用setattribute赋值给大图的src路径，则可以实现点击小图切换到对应大图上。</p>
+<p>  实现页面的明暗</p>
+<p>3.实现简单的轮播图</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/03/04/Vue学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -772,735 +1524,6 @@ jQ.get(url, callback),$.post(url,data,callback)
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/02/27/webpackp学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/02/27/webpackp学习/" itemprop="url">webpackp学习（1）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T22:08:11+08:00">
-                2019-02-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>  webpack是一款打包工具，用于模块化编译JavaScript。可以使自己项目更加方便使用。<br>  1.安装<br>    首先安装nide.js运行环境，并配置环境变量<br>    在你的项目根目录下 运行命令 npm install webpack –save<br>                              npm install webpack-cli –save<br>  2.在你的项目文件夹下创建文件夹app并在其中创建index.js。新建dist文件夹，并配置package.json文件夹，确保private：ture，并且删除main属性</p>
-<p>  3.运行命令 webpack app/index.js dist/bundle.js<br>   app/index.js是一个入口，dist文件夹是一个出口，执行命令后dist文件中会生成bundle.js。<br>  webpack可以去除繁杂的依赖关系，使用webpack能够更好的管理你的代码。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/02/26/post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/02/26/post/" itemprop="url">post</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T23:09:59+08:00">
-                2019-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>  今天的学习内容</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/02/26/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/02/26/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-26T22:17:45+08:00">
-                2019-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/01/16/css/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/01/16/css/" itemprop="url">css</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T22:42:01+08:00">
-                2019-01-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>学习了CSS相关的知识<br>（1）颜色设置有4种方式：<br>    1.RGB（1,1,1）设置数值为0-255。<br>    2.hex（）设置为#00ff00或者#0ff。<br>    3.直接设置color颜色，red。<br>    4.hsl（0,100%，50%）<br>（2）设置文本位置：text-align：center，right，left。<br>（3）hover选择器（当鼠标指针悬浮时会选择）使用方法，s::hover{}<br> (4) position的用法<br>     1.relative（相对的）它允许指定CSS应如何相对于其再也米娜正常流中的当前位置移动它，通常与left，right，bottom设置搭配。<br>     2.absolute（绝对的）它将元素锁定在父容器的位置，与（相对的）位置不同，从文档的正常流中删除元素，周围的项忽略它，CSS的偏移属性（顶部底部左右）用来调整位置<br>     3.fixed（绝对定位）用于锁定于相对于浏览器窗口的元素。与absolute相似，但关键区别是当用户滚动时，具有固定位置的元素不会移动。一般使用于导航栏。<br>     4.float（浮动定位）它并不是使用position设置，浮动元素将从文档的正常流中删除，并推送到父元素的left或right，它通常用于width属性，指定浮动元素所需水平空间。<br>（5）z-index用法，用于设定元素层级，层级高的元素会展示在层级低的元素之上。如z-index:2<br>     可以同过设置margin：auto 可以使元素居中。<br>（6）background：linear-gradinet（）颜色渐变设置。background:linear-gradient(90deg, red, yellow, rgb(204, 204, 255))。<br>（7）transform属性：scale函数:缩放,skew函数单位deg：倾斜,rotate函数单位deg：旋转,translate函数：移动单位px,transform-origin基准点函数,单位px</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/01/12/冒泡事件和捕获事件/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/01/12/冒泡事件和捕获事件/" itemprop="url">'冒泡事件和捕获事件'</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-12T20:59:57+08:00">
-                2019-01-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p> 事件冒泡：指的是当事件触发后，从被绑定的元素内部逐级向外传播，用于事件代理，事件委托。在子元素上触发的事件，绑定到父元素上，经过事件冒泡<br> 处理同意类元素具有相同事件的。从内向外冒泡，绑在子元素的事件与绑在父元素的事件效果相同。适合委托的事件：click， mousedown，mouseUp，等等事件<br> 事件捕获：和冒泡相反，是从外及内的<br> 例如：<br> ‘’’<br>     <div id="1"><br>         <div id="2"><br>             <button id="3">点击触发</button><br>         </div><br>     </div><br>     ‘’’<br>     js事件<br>     var id1 = document.querySelector(‘#id1’)<br>     var id2 = document.querySelector(‘#id2’)<br>     var id3 = document.querySelector(‘#id3’)<br>     //事件冒泡<br>     id1.addEventListener(‘click’, function(event){<br>         console.log(‘click id1’, event)<br>         })<br>     id2.addEventListener(‘click’, function(event){<br>        console.log(‘click id2’, event)<br>       })<br>     id3.addEventListener(‘click’, function(event){<br>         console.log(‘click id3’, event)<br>         })<br>     //则它触发顺序为id3，id2，id1<br>    //事件捕获<br>     id1.addEventListener(‘click’, function(event){<br>         console.log(‘click id1’, event)<br>         }, true)<br>     id2.addEventListener(‘click’, function(event){<br>         console.log(‘click id2’, event)<br>         }, true)<br>     id3.addEventListener(‘click’, function(event){<br>         console.log(‘click id3’, event)<br>         , true})<br>         //则它触发顺序id1，id2，id3</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/01/03/心得/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/01/03/心得/" itemprop="url">心得</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T21:38:00+08:00">
-                2019-01-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>JS中每一个变量（也就是每一个值）都是一种数据类型<br> （一）内置的基本数据类型有以下几类：<br> 1.number 数字 2.string 字符串<br> 3.boolean 布尔变量 4.object 对象<br> （二）1.8<br>   笔记–类型-值-变量<br> 1.数据类型：在编程语言中表示能够操作的值被称为数据类型<br> 2.编程最基本的特性就是能够支持多种数据类型<br> 3.通过将值赋值给变量将值保存在变量中<br> 4.变量是一个名称，可以通过名称来获得对值的引用<br>   数据类型分类<br> 1.JavaScript的数据类型分为两类：原始类型（primitive type）和对象数据类型（object type）<br> 原始数据类型包括：数字，字符串，布尔值。特殊的原始值：null和undefined他们不是原始数据类型<br> 对象数据类型：除了原始数据类型，null和undefined之外都是对象数据类型。（1）对象是属性（property）的集合，每个属性由名和值组成，例如{小明：boy}普通的对象是命名值的无序集合。（2）数组也是对象数据类型，它是带编号的有序集合。（3）特殊对象：函数-函数是具有与它相关的可执行的代码的对象，通过调用函数来运行可执行代码。<br> 2.JavaScript解释器有自己的内存管理工具，可以自动进行垃圾回收<br> 3.JavaScript是一种面向对象的语言，在JavaScript中只有null和undefined是无法拥有方法的值。<br> 4.JavaScript的类型除可以分为3种（1）原始类型和对象类型。（2）拥有方法类型和不拥有方法类型。（3）可变类型和不可变类型，可变类型：比如对象和数组的值是可以修改的，不可变类型：比如null，字符串，undefined是不可修改的<br> 5.JavaScript的变量：变量是无类型的，变量可以被赋值任何值，也可以重新赋予不同类型的值例。不在任何函数内声明的变量为全局变量，在程序任何地方都是可见的。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1551,7 +1574,7 @@ jQ.get(url, callback),$.post(url,data,callback)
               
                 <a href="/0730chen.github.io/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1573,7 +1596,7 @@ jQ.get(url, callback),$.post(url,data,callback)
               
               <div class="site-state-item site-state-tags">
                 <a href="/0730chen.github.io/tags/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -269,6 +269,824 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/11/06/React入门(路由使用)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/11/06/React入门(路由使用)/" itemprop="url">React入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-06T22:46:23+08:00">
+                2019-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="安装路由-react-router-dom"><a href="#安装路由-react-router-dom" class="headerlink" title="安装路由 react-router-dom"></a>安装路由 react-router-dom</h4><ol>
+<li><p>使用 npm install react-router-dom –save 在本项目安装使用 react 路由</p>
+</li>
+<li><p>在组件中引入路由</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在页面中直接引用react-router</span></span><br><span class="line"><span class="keyword">import</span> &#123; BrowserRouter <span class="keyword">as</span> Router, Switch, Route, Link &#125; <span class="keyword">from</span> <span class="string">"react-router-dom"</span>;</span><br><span class="line">BrowserRouter <span class="keyword">as</span> Router <span class="comment">//这个意思使用 Router代替BrowserRouter</span></span><br><span class="line">Router 相当于 BrowserRouter</span><br><span class="line"></span><br><span class="line">Switch 是渲染组件的容器(也相当于是一个组件) 在匹配访问的路径后渲染一个组件</span><br><span class="line">Route 是路由容器，每一个路由都需要使用Route包裹起来</span><br><span class="line">Link 相当于Vue中Route-link</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>实践操作</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br><span class="line"><span class="keyword">import</span> &#123; BrowserRouter <span class="keyword">as</span> Router, Switch, Route, Link &#125; <span class="keyword">from</span></span><br><span class="line"><span class="comment">//定义一个Router组件</span></span><br><span class="line"><span class="comment">//1.组件外部需要有一个&lt;div&gt;标签，和Vue相似</span></span><br><span class="line"><span class="comment">//2.Router组件在一个路由组件中使用一次就可以了</span></span><br><span class="line"><span class="comment">//3.建立路由</span></span><br><span class="line"><span class="comment">//4.引导路由使用标签包裹 Link 属性 to ="你的路径" '/question1'</span></span><br><span class="line"><span class="comment">//5. link就是相当于一个a标签</span></span><br><span class="line"><span class="comment">//6.使用 Switch匹配组件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TitleBar</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">		<span class="keyword">super</span>(props)</span><br><span class="line">	&#125;</span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">return</span>(</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">			&lt;Router&gt;</span><br><span class="line">			&lt;nav&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">			&lt;li&gt;&lt;Link to="/question1"&gt;问题一&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;&lt;Link to="/question2"&gt;问题二&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;&lt;Link to="/question3"&gt;问题三&lt;/Link&gt;&lt;/li&gt;</span><br><span class="line">			&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>nav&gt;</span><br><span class="line">			&lt;Switch&gt;</span><br><span class="line">			&lt;Route path=<span class="string">"/question1"</span>&gt;&lt;Question1/&gt;&lt;/Route&gt;</span><br><span class="line">			&lt;Route path=<span class="string">"/Question2"</span>&gt;&lt;Question2/&gt;&lt;/Route&gt;</span><br><span class="line">			&lt;Route path=<span class="string">"/Question3"</span>&gt;&lt;Question3/&gt;&lt;/Route&gt;</span><br><span class="line">			&lt;<span class="regexp">/Switch&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>Router&gt;</span><br><span class="line">			&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/构建3个组件</span></span><br><span class="line"><span class="regexp">class Question1 extends React.Compoent&#123;</span></span><br><span class="line"><span class="regexp">	constructor(props)&#123;</span></span><br><span class="line"><span class="regexp">		super(props)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">	render()&#123;</span></span><br><span class="line"><span class="regexp">		return(</span></span><br><span class="line"><span class="regexp">			&lt;div&gt;&lt;div&gt;问题一组件&lt;/</span>div&gt;&lt;/div&gt;</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Question2</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">		<span class="keyword">super</span>(props)</span><br><span class="line">	&#125;</span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">			&lt;div&gt;问题二组件&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>div&gt;</span><br><span class="line">		)</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Question3</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">		<span class="keyword">super</span>(props)</span><br><span class="line">	&#125;</span><br><span class="line">	render()&#123;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">		&lt;div&gt;问题三组件&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		&lt;/</span>div&gt;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">	&lt;TitleBar&gt;,</span><br><span class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'app'</span>)</span><br><span class="line">)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> TitleBar</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>路由组件搭建完成后运行 npm start</p>
+<ul>
+<li>点击问题一时，下方显示问题一组件，</li>
+<li>点击问题二时，下方显示问题二组件</li>
+<li>点击问题三时，下方显示问题三组件<br>在其他需要路由导航的组件中可以直接使用import xxx from ‘TitleBar’导入这个组件</li>
+</ul>
+</li>
+<li><p>组件化有效的节省的代码的重复书写，提高代码的复用率</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/11/06/scss学习使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/11/06/scss学习使用/" itemprop="url">Scss的学习使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-06T22:46:20+08:00">
+                2019-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="Sass和Scss-Css他们三者之间的区别。"><a href="#Sass和Scss-Css他们三者之间的区别。" class="headerlink" title="Sass和Scss,Css他们三者之间的区别。"></a>Sass和Scss,Css他们三者之间的区别。</h5><ol>
+<li>Sass 是Css的预处理语言<br> 是一种css的开发工具，可以极大便利Css的开发</li>
+<li>Scss 是Sass的修改版本，更符合JS程序员的认识，更容易理解<ul>
+<li>语法<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建变量</span></span><br><span class="line"><span class="comment">//1-1使用$color创建变量，然后可以全局使用，当你修改这个变量的时候，你使用这个变量的位置也会发生改变</span></span><br><span class="line"><span class="comment">//Scss中变量就相当于一个占位符，在适用时，根据值确认自己的值</span></span><br><span class="line"><span class="variable">$color</span>:red;</span><br><span class="line"><span class="comment">//使用变量</span></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">	<span class="attribute">background</span>:<span class="variable">$color</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.选择器嵌套</span></span><br><span class="line"><span class="comment">//正常选择器使用</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">	<span class="attribute">background</span>:red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h1</span>&gt;<span class="selector-tag">div</span>&#123;</span><br><span class="line">	<span class="attribute">background</span>:blue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//此时需要多写一个h1，表明是h1中的div进行样式操作</span></span><br><span class="line"><span class="comment">//Scss写法嵌套选择</span></span><br><span class="line"><span class="comment">//使用&amp;:引用父选择器</span></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">	<span class="attribute">background</span>:red;</span><br><span class="line">	&gt;<span class="selector-tag">div</span>&#123;</span><br><span class="line">		<span class="attribute">background</span>:blue;</span><br><span class="line">	&#125;</span><br><span class="line">	&amp;：hover&#123;</span><br><span class="line">		<span class="attribute">background</span>：yellow；</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//直接在内部嵌套选择器进行样式操作</span></span><br><span class="line"><span class="comment">//3. 运算</span></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">	<span class="attribute">width</span>:(<span class="number">1</span>+<span class="number">2</span>)px</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//<span class="number">4</span>. import 导入</span><br><span class="line"></span><br><span class="line">@import <span class="string">'style.scss'</span>//文件</span><br><span class="line"></span><br><span class="line">//<span class="number">5</span> 继承</span><br><span class="line"> //xtend //只能继承选择器 --&gt;</span><br><span class="line"> .all&#123;</span><br><span class="line">	 border:<span class="number">1px</span> solid blue;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.childern</span>&#123;</span><br><span class="line">	 @<span class="keyword">extend</span> .ll</span><br><span class="line"> &#125;</span><br><span class="line"> //此时chiildren有何.all相同的属性</span><br><span class="line"></span><br><span class="line"> //<span class="number">5</span>. 函数定义</span><br><span class="line"> //定义了一个add函数，函数作用是添加border边框</span><br><span class="line"> @<span class="keyword">mixin</span> add()&#123;</span><br><span class="line">	 <span class="attribute">border</span>:<span class="number">1px</span> solid black;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.border</span>&#123;</span><br><span class="line">	 @<span class="keyword">include</span> add()//调用这个函数，给标签添加边框属性</span><br><span class="line"> &#125;</span><br><span class="line"> //函数传递参数</span><br><span class="line"> @<span class="keyword">mixin</span> add(<span class="variable">$value</span>)&#123;</span><br><span class="line">	 <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="variable">$value</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.border</span>&#123;</span><br><span class="line">	 @<span class="keyword">include</span> add(red) //在调用时传入参数进行动态渲染</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> //<span class="keyword">if</span>语句</span><br><span class="line"> p&#123;</span><br><span class="line">	 @<span class="keyword">if</span> 1+<span class="number">1</span>==<span class="number">2</span>&#123;@<span class="keyword">include</span> add()&#125;</span><br><span class="line">	 @<span class="keyword">if</span> 5&lt;<span class="number">3</span> &#123;@<span class="keyword">include</span> add()&#125;</span><br><span class="line">	 @<span class="keyword">if</span> null &#123;@<span class="keyword">include</span> add()&#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> //<span class="keyword">else</span> if语句</span><br><span class="line"> p&#123;</span><br><span class="line">	 @<span class="keyword">if</span> <span class="variable">$value</span> == aa&#123;</span><br><span class="line">		 <span class="attribute">color</span>:blue</span><br><span class="line">	 &#125; @else if <span class="variable">$value</span> ==bb&#123;</span><br><span class="line">		 color:red</span><br><span class="line">	 &#125;@else&#123;</span><br><span class="line">		 color:black</span><br><span class="line">	 &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> //for 循环</span><br><span class="line"> @for <span class="variable">$i</span> from <span class="number">1</span> through <span class="number">3</span>&#123;</span><br><span class="line">	 .item-#&#123;<span class="variable">$i</span>&#125; &#123;widht:<span class="number">2em</span>*<span class="variable">$i</span>&#125;</span><br><span class="line"> &#125;</span><br><span class="line"> //生成</span><br><span class="line"> .item-<span class="number">1</span>&#123;</span><br><span class="line">	 width:<span class="number">2em</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.item-2</span>&#123;</span><br><span class="line">	 <span class="attribute">width</span>:<span class="number">4em</span>;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.item-3</span>&#123;</span><br><span class="line">	 <span class="attribute">width</span>:<span class="number">6em</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/11/02/Superagent和cheerio库的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/11/02/Superagent和cheerio库的使用/" itemprop="url">SuperAgent和cheerio库的使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-02T00:00:00+08:00">
+                2019-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="SpuerAgent-库介绍"><a href="#SpuerAgent-库介绍" class="headerlink" title="SpuerAgent 库介绍"></a>SpuerAgent 库介绍</h4><ol>
+<li>SuperAgent 它是一个强大并且可读性很好的轻量级 ajaxAPI，是一个关于 HTTP 方面的一个库,最为优秀的是他可以进行链式操作，它返回的是一个 promise</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>npm install superagent --save</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>开始使用 superAgent<br>一般发起 http 请求都会有 method(方法) params(请求参数)<br>使用 superAgent 发起请求</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//get发起请求参数是一个网址或者api</span></span><br><span class="line"><span class="comment">//链式操作end是有一个回调函数，可以接受到请求后得到的数据</span></span><br><span class="line"><span class="comment">//set中是一个对象，是每次请求都会携带的参数</span></span><br><span class="line">     superAgent.get(<span class="string">'/123'</span>).set(&#123;<span class="string">'Referer'</span>,<span class="string">'https://www.google.com'</span>,</span><br><span class="line">        <span class="string">'Accept'</span>,<span class="string">'image/webp,image/*,*/*;q=0.8'</span>&#125;).end(<span class="function">(<span class="params">err.res</span>)=&gt;</span>&#123;&#125;)</span><br><span class="line"><span class="comment">//或者使用</span></span><br><span class="line">     superAgent(<span class="string">'get'</span>,<span class="string">'/api'</span>).set(&#123;&#125;).end(<span class="function">(<span class="params">err,res</span>)=&gt;</span>&#123;&#125;)</span><br><span class="line"><span class="comment">//或者使用async/await</span></span><br><span class="line"> <span class="keyword">let</span> a = <span class="keyword">await</span> superAgent(<span class="string">''</span>) <span class="comment">//a可以接受到superAgent的请求参数</span></span><br></pre></td></tr></table></figure>
+<h5 id="cheerio-库使用"><a href="#cheerio-库使用" class="headerlink" title="cheerio 库使用"></a>cheerio 库使用</h5><ol>
+<li><p>cheerio是一个和Jquery相似的解析库<br>下载</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下载</span></span><br><span class="line"><span class="number">1.</span> npm install cheerio --save</span><br></pre></td></tr></table></figure>
+<p>cheerio使用<br>cheerio有一个load函数，函数接受一个html格式数据<br>使用cheerio就像使用jquery库 选择你需要的数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> $ = cheerio.load(html);<span class="comment">//接受一个参数</span></span><br><span class="line">$(<span class="string">'#id'</span>)<span class="comment">//选取标签</span></span><br><span class="line">.text()<span class="comment">//输出文本内容</span></span><br><span class="line">.attr()<span class="comment">//获取所有的class的属性值</span></span><br><span class="line">text() attr()<span class="comment">//取出来是字符串</span></span><br><span class="line"><span class="comment">//使用JSON.parse()转换为对象</span></span><br></pre></td></tr></table></figure>
+<p>JSON.parse()需要使用try catch方法捕捉错误</p>
+</li>
+<li>将获取到的数据集合起来返回出去，外部就可以使用这个解析这个页面后的数据</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/11/02/Promise和异步/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/11/02/Promise和异步/" itemprop="url">Promise和异步</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-02T00:00:00+08:00">
+                2019-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="什么是异步"><a href="#什么是异步" class="headerlink" title="什么是异步"></a>什么是异步</h4><ol>
+<li><p>异步就当前不能立即获得结果就叫做异步</p>
+</li>
+<li><p>如何处理异步</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一般的代码</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'1'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'2'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'3'</span>)</span><br><span class="line"><span class="comment">//执行顺序是</span></span><br><span class="line"><span class="comment">//1</span></span><br><span class="line"><span class="comment">//2</span></span><br><span class="line"><span class="comment">//3</span></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(<span class="string">'5s显示'</span>)&#125;,<span class="number">5000</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'4'</span>)</span><br><span class="line"><span class="comment">//执行顺序是</span></span><br><span class="line"><span class="comment">//1,2,3,4,5s后显示</span></span><br></pre></td></tr></table></figure>
+<p> 使用setTimeout()后 代码输出结果并不是我们预想的 1，2，3，5s显示，4。不是从上而下执行</p>
+<h5 id="这里只是模仿了异步，并不是真的异步"><a href="#这里只是模仿了异步，并不是真的异步" class="headerlink" title="这里只是模仿了异步，并不是真的异步"></a>这里只是模仿了异步，并不是真的异步</h5><ul>
+<li><p>当遇到异步函数的解决办法</p>
+<ol>
+<li>使用回调函数获取异步数据，比如我们使用test连接上了数据库，然后操作数据库，操作数据库后获得数据<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">fn</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//定义一个储存数据的数组</span></span><br><span class="line">	<span class="keyword">let</span> data = []</span><br><span class="line">	database.find(<span class="string">'123'</span>,fn())<span class="comment">//查询数据,然后我们想要拿到这个数据 只有调用fn，才能够拿到这个数据，否则data中始终是空的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="回调函数的优缺点"><a href="#回调函数的优缺点" class="headerlink" title="回调函数的优缺点"></a>回调函数的优缺点</h5><p>优点</p>
+</li>
+<li>帮助我们解决了能够成功拿到异步请求中的结果<br>缺点</li>
+<li>回调函数写起来名称不规范，不统一，多个开发使用多个名字</li>
+<li>容易出现回调地狱,回调一个套一个，会导致代码不易维护</li>
+<li><p>很难对异步请求进行错误处理</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当你的函数有多个异步请求，你就需要多个多个回调函数进行数据获取</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params">test2(test3&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">&#125;</span>)</span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是在node.js中大部分API都是使用回调函数进行数据的获取操作</p>
+</li>
+</ul>
+<ol start="2">
+<li><p>使用Promsie解决异步操作<br>Promise是一个构造函数 构造Promise对象可以进行链式操作<br>promise有三个状态 pedding(等待中) Fulfilled(执行中) Rejected(拒绝)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 使用实例</span><br><span class="line"><span class="comment">//定义一个函数</span></span><br><span class="line"><span class="comment">//函数使用new Promise构建一个promise对象对象中有是一个回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span><br><span class="line">		reslove(data)</span><br><span class="line">		reject(err) <span class="comment">//最终得到的数据通过resolve返回出去</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line">then()<span class="comment">//then方法接受一个参数，参数是一个函数，可以获取到resolve返回的值 then可以被一个promise调用多次</span></span><br><span class="line">test1.then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(res)&#125;)<span class="comment">//就能获取到data</span></span><br><span class="line"><span class="keyword">catch</span>()<span class="comment">//函数接受一个参数,参数是一个函数，当请求失败后调用reject，使用catch()函数接收这个错误</span></span><br><span class="line"><span class="keyword">catch</span>(<span class="function"><span class="params">err</span>=&gt;</span>&#123;<span class="built_in">console</span>.log(err)&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//map中是一个回调函数 parseInt('','')</span></span><br><span class="line"><span class="comment">//parseInt(接受两个参数),第一个参数是需要转换的数，第二个是进制</span></span><br><span class="line"><span class="comment">//parsenInt 相当于 (1,0) (2,1) (3,2) 调用parsenInt 0就相当于不设置</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">1</span>,<span class="number">0</span>) === <span class="number">1</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">2</span>,<span class="number">1</span>) === <span class="literal">NaN</span> </span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(<span class="built_in">parseInt</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>async/await处理异步，异步代码同步执行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="comment">//关键字定义这是一个异步函数</span></span><br><span class="line"><span class="comment">//只有在async中定义的</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> a = <span class="keyword">await</span> promsie <span class="comment">//promsie是一个由Promise创建的异步函数</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//异步代码，同步形式</span></span><br><span class="line">	<span class="comment">//console.log(a)这个函数会在await之后才会执行console.log(a)</span></span><br><span class="line">	<span class="built_in">console</span>.log(a) </span><br><span class="line">	<span class="comment">//a可以接受到resolve(data)传递的data内容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/10/30/axios/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/10/30/axios/" itemprop="url">axios的基本用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-30T22:23:41+08:00">
+                2019-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h3><h4 id="ajax用来发起网络请求"><a href="#ajax用来发起网络请求" class="headerlink" title="ajax用来发起网络请求"></a>ajax用来发起网络请求</h4><ol>
+<li>ajax请求一般都伴随着异步(异步就是不能直接在当时拿到结果)</li>
+<li>现在使用axios来发起axios请求(主流)</li>
+<li>使用方式<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用CDN引入 </span></span><br><span class="line">&lt;script src=<span class="string">"https://unpkg.com/axios/dist/axios.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="comment">//npm下载</span></span><br><span class="line">npm install axios</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="发起请求"><a href="#发起请求" class="headerlink" title="发起请求"></a>发起请求</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> get接受url参数，url是你请求的路径，可以直接携带参数，也可以get(<span class="string">'url'</span>,&#123;<span class="attr">params</span>:&#123;&#125;&#125;)接受一个对象，对象有一个params属性，属性里面有你要携带的参数</span><br><span class="line">.then()方法，接受一个回调函数当请求请求成功后执行</span><br><span class="line">.catch()方法，接受一个回调函数当请求出错时执行</span><br><span class="line"><span class="comment">//发起请求get</span></span><br><span class="line"></span><br><span class="line">axios.get(<span class="string">'/url?id=123'</span>).then(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;<span class="built_in">console</span>.log(response)&#125;).catch(<span class="function">(<span class="params">error</span>)=&gt;</span>&#123;<span class="built_in">console</span>.log(error)&#125;)</span><br><span class="line">axios.get(<span class="string">'/url'</span>,&#123;<span class="attr">params</span>:&#123;<span class="attr">id</span>:<span class="number">123</span>&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="post"><a href="#post" class="headerlink" title="post"></a>post</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//发起post请求</span></span><br><span class="line"><span class="comment">//post请求需要携带参数  </span></span><br><span class="line"><span class="comment">//参数已对象形式传递post中</span></span><br><span class="line">.then()</span><br><span class="line">.catch()</span><br><span class="line"><span class="comment">//都是和get一样的用法</span></span><br><span class="line">axios.post(<span class="string">'/url'</span>,&#123;<span class="attr">first</span>:<span class="string">'name'</span>,<span class="attr">last</span>:<span class="string">'hello'</span>&#125;).then().catch()</span><br></pre></td></tr></table></figure>
+<h5 id="执行多个并发请求"><a href="#执行多个并发请求" class="headerlink" title="执行多个并发请求"></a>执行多个并发请求</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用axios.all(fn1,fn2) </span></span><br><span class="line"><span class="comment">//接受两个请求函数，</span></span><br><span class="line">.then()<span class="comment">//当两个请求都完成后，执行then()</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserAccount</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">'/user/12345'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserPermissions</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">'/user/12345/permissions'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">axios.all([getUserAccount(), getUserPermissions()])</span><br><span class="line">  .then(axios.spread(<span class="function"><span class="keyword">function</span> (<span class="params">acct, perms</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 两个请求现在都执行完成</span></span><br><span class="line">  &#125;));</span><br></pre></td></tr></table></figure>
+<h5 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可以使用对象配置好axios请求参数，</span></span><br><span class="line">axios(&#123;<span class="attr">method</span>:<span class="string">'get'</span>,<span class="attr">url</span>:<span class="string">'/..ss'</span>,<span class="attr">params</span>:&#123;<span class="attr">id</span>:<span class="number">123</span>&#125;&#125;)</span><br><span class="line">axios(&#123;method&#125;)</span><br><span class="line">axios()<span class="comment">//默认发送的是get请求</span></span><br></pre></td></tr></table></figure>
+<h4 id="axios创建实例"><a href="#axios创建实例" class="headerlink" title="axios创建实例"></a>axios创建实例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> instance = axios.create(&#123;</span><br><span class="line">  baseURL: <span class="string">'https://some-domain.com/api/'</span>,</span><br><span class="line">  timeout: <span class="number">1000</span>,</span><br><span class="line">  headers: &#123;<span class="string">'X-Custom-Header'</span>: <span class="string">'foobar'</span>&#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//创建的实例拥有实例方法</span></span><br><span class="line">instance()<span class="comment">//默认使用get请求baseurl</span></span><br></pre></td></tr></table></figure>
+<h4 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//拦截器就是在请求或者响应被then，catch之前拦截他们</span></span><br><span class="line"><span class="comment">// 添加请求拦截器</span></span><br><span class="line">axios.interceptors.request.use(<span class="function"><span class="keyword">function</span> (<span class="params">config</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 在发送请求之前做些什么</span></span><br><span class="line">    <span class="keyword">return</span> config;</span><br><span class="line">  &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 对请求错误做些什么</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加响应拦截器</span></span><br><span class="line">axios.interceptors.response.use(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 对响应数据做点什么</span></span><br><span class="line">    <span class="keyword">return</span> response;</span><br><span class="line">  &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 对响应错误做点什么</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//在稍后移除拦截器</span></span><br><span class="line">  <span class="keyword">var</span> myInterceptor = axios.interceptors.request.use(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="comment">/*...*/</span>&#125;);</span><br><span class="line">  axios.interceptors.request.eject(myInterceptor);</span><br></pre></td></tr></table></figure>
+<h4 id="axios比Promise的优势之处"><a href="#axios比Promise的优势之处" class="headerlink" title="axios比Promise的优势之处"></a>axios比Promise的优势之处</h4><ol>
+<li>promise在创建执行后就不能停止，必须要执行完毕才能停止<br>axios可以使用API停止请求,给携带一个token来停止当前请求，然后在请求时带上这个参数进行请求<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> CancelToken = axios.CancelToken;</span><br><span class="line"><span class="keyword">var</span> source = CancelToken.source();</span><br><span class="line"></span><br><span class="line">axios.get(<span class="string">'/user/12345'</span>, &#123;</span><br><span class="line">  cancelToken: source.token</span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">thrown</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (axios.isCancel(thrown)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Request canceled'</span>, thrown.message);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 处理错误</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 取消请求（message 参数是可选的）</span></span><br><span class="line">source.cancel(<span class="string">'Operation canceled by the user.'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//还可以通过传递一个 executor 函数到 CancelToken 的构造函数来创建 cancel token：</span></span><br><span class="line"><span class="keyword">var</span> CancelToken = axios.CancelToken;</span><br><span class="line"><span class="keyword">var</span> cancel;</span><br><span class="line"></span><br><span class="line">axios.get(<span class="string">'/user/12345'</span>, &#123;</span><br><span class="line">  cancelToken: <span class="keyword">new</span> CancelToken(<span class="function"><span class="keyword">function</span> <span class="title">executor</span>(<span class="params">c</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// executor 函数接收一个 cancel 函数作为参数</span></span><br><span class="line">    cancel = c;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 取消请求</span></span><br><span class="line">cancel();</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/10/29/ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="前端">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/0730chen.github.io/2019/10/29/ajax/" itemprop="url">Ajax基础知识及原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-29T23:38:08+08:00">
+                2019-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="Ajax简介"><a href="#Ajax简介" class="headerlink" title="Ajax简介"></a>Ajax简介</h4><ol>
+<li>基础知识：Ajax是 Asynchronous JavaScript and XML 异步的js和xml xml是一门和HTML相似的标记语言</li>
+<li>ajax的用途：ajax是用来发送请求，这个请求是用来请求网络资源。现在常用来和后端进行数据的交换</li>
+</ol>
+<h4 id="如何发起ajax请求"><a href="#如何发起ajax请求" class="headerlink" title="如何发起ajax请求"></a>如何发起ajax请求</h4><ol>
+<li>浏览器为我们提供了一个构造函数，用来构造一个ajax对象，发起ajax请求<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//浏览器提供了一个ajax的构造函数XMLHttpResquest</span></span><br><span class="line"><span class="keyword">let</span> getData = <span class="keyword">new</span> XMLHttpResquest()<span class="comment">//第一步创建一个xml...对象，这个对象发起请求</span></span><br><span class="line"><span class="comment">//调用open方法  接受两个参数open(method,url)</span></span><br><span class="line">getData.open(<span class="string">'get'</span>,<span class="string">'./json'</span>)</span><br><span class="line"><span class="comment">//监听事件</span></span><br><span class="line"><span class="comment">//加载事件 </span></span><br><span class="line">getData.onload = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line"><span class="comment">//请求成功后，接受到g</span></span><br><span class="line"><span class="built_in">console</span>.log(getData.response)<span class="comment">//打印接受到的response数据</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//请求出错事件</span></span><br><span class="line">getData.onerror = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//发送ajax   send函数</span></span><br><span class="line">getData.send()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//监听onload和onerror已经不时用</span></span><br><span class="line"><span class="comment">//采用新的方式</span></span><br><span class="line"><span class="comment">//监听新事件</span></span><br><span class="line">getData.onreadystatechange = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//判断onreadystate对象的值，确定ajax处于哪一个状态</span></span><br><span class="line">    <span class="comment">//readyState状态</span></span><br><span class="line">    <span class="comment">//0 是还未调用open 即是ajax对象刚创建的时候</span></span><br><span class="line">    <span class="comment">//1 是调用open 还未调用send</span></span><br><span class="line">    <span class="comment">//2 是调用send</span></span><br><span class="line">    <span class="comment">//3. 网络开始下载ajax</span></span><br><span class="line">    <span class="comment">//4 下载完成</span></span><br><span class="line">    <span class="comment">//如果不是 4 则请求失败</span></span><br><span class="line">    <span class="keyword">if</span>(getData.readyState ===<span class="number">4</span> &amp;&amp; getData.status===<span class="number">200</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(getData.response)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="xml文件"><a href="#xml文件" class="headerlink" title="xml文件"></a>xml文件</h3><ol>
+<li>xml在发送ajax后，浏览器指定响应文件为text/xml或者application/xml。此时ajax请求成功后，使用xhr.responseXml来获取XML文档格式</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/10/28/Jquery常用API/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -349,7 +1167,18 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加类名</span></span><br><span class="line">$(<span class="string">'.class'</span>).addClass(<span class="string">'xx'</span>)<span class="comment">//xx是需要添加的类名</span></span><br><span class="line">hasClass()<span class="comment">//判断是否存在某个类</span></span><br><span class="line">removeclass()<span class="comment">//移除类</span></span><br><span class="line">toggleClass()<span class="comment">//如果存在这个类则移除，不存在则填加</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//复制一个元素</span></span><br><span class="line">$().clone()<span class="comment">//复制一个你选中的元素</span></span><br><span class="line"><span class="comment">//元素删除</span></span><br><span class="line">$().remove() or .detach()</span><br><span class="line"><span class="comment">//remove于detach区别，remove不保留删除元素</span></span><br><span class="line"><span class="comment">//清空元素内容，但是不删除元素</span></span><br><span class="line">$().empty()</span><br><span class="line"><span class="comment">//添加html</span></span><br><span class="line">$().append(<span class="string">'b'</span>)<span class="comment">//在每个匹配元素里面的末尾处插入参数内容</span></span><br><span class="line">$().appendTo(<span class="string">'a'</span>)<span class="comment">//将匹配的元素插入到目标元素的最后面</span></span><br><span class="line"><span class="comment">//两个区别是 append后面是要插入的元素，appendTo后面选择要被插入的元素，前面是要插入的元素</span></span><br><span class="line"><span class="comment">//不带参数就是获取内容，带参数就是设置内容。重载</span></span><br><span class="line">$().html()<span class="comment">//获取html文本内容  </span></span><br><span class="line">$().text()<span class="comment">//获取标签的文本内容</span></span><br><span class="line">$().after()</span><br><span class="line">$().before()</span><br><span class="line">$().insertAfter()</span><br><span class="line">$().insertBefore()</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取css属性</span></span><br><span class="line"><span class="comment">//有参数为设置，不带参数为获取</span></span><br><span class="line">$().css()</span><br><span class="line">$().height()</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>链式操作<br>这是Jquery最为优秀的设计思想</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在选择操作后后续可以继续进行操作</span></span><br><span class="line">$().addClass().removeClass().end()<span class="comment">//ends 退回到上一次的状态</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在选择操作后后续可以继续进行操作</span></span><br><span class="line">$().addClass().removeClass().end()<span class="comment">//ends 退回到上一次的状态</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Jquery的优势部分</p>
+<ul>
+<li>可以不使用new操作符就可以创建对象，Jquery对象</li>
+<li>函数重载，根据参数不同，有不同作用</li>
+<li>使用闭包隐藏细节，外部只能使用api文档进行操作</li>
+<li>getter/setter设计模式 只读，只写</li>
+<li>别名，可以使用$符号代替Jquery</li>
+<li>适配器 可以使用在不同环境中</li>
+</ul>
+</li>
 </ol>
 
           
@@ -805,853 +1634,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/10/09/JavaScript的诞生/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/10/09/JavaScript的诞生/" itemprop="url">JavaScript的诞生</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-09T20:29:00+08:00">
-                2019-10-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Js的诞生"><a href="#Js的诞生" class="headerlink" title="Js的诞生"></a>Js的诞生</h3><pre><code>JavaScript是JS语言，有明确的语法，数据类型
-ES是规则是JavaScript的标准规则，他两之间不是包含关系
-</code></pre><ol>
-<li>Js的基本特点<br> 是一种解释性脚本语言(代码不用进行预编译)<br> 主要应用在网页端<br> 可以跨平台使用</li>
-<li><p>Js的设计思路</p>
-<ol>
-<li>借鉴C语言的基本语法</li>
-<li>借鉴Java的数据类型和内存管理</li>
-<li>借鉴scheme语言，将函数提升到一等公民</li>
-<li>借鉴 self语言，使用基于原型继承的机制 prototype</li>
-</ol>
-</li>
-<li><p>Js在设计之初存在的10个缺陷</p>
-<ol>
-<li>不合适开发大型应用程序：没有模块化，允许同名函数的重复定义，后面定义可以覆盖前面定义</li>
-<li>标准库非常小，很多功能还不具备</li>
-<li>null与undefined： null属于object的一种，undefined是未定义，是一种数据类型</li>
-<li>全局变量:在JS中，全局变量是所有模块中都可见的，函数内容也可以生成全局变量</li>
-<li>自动插入行尾分号：js语句必须以分号结尾，但是如果你忘记加上分号，解释器在运行时会自动加上分号。</li>
-<li>加号运算符 : 当数字与字符串相加，会将数字当成字符串然后拼接。两种不同类型的数据可以相加，不会报错</li>
-<li>NaN:是一种数字，表示了超过解释器极限的数字 ，NaN === NaN  //false</li>
-<li>数组和对象的区分:js中数组也是属于对象</li>
-<li><p>== 与===： == 在某些情况下不够严谨，往后使用 === 代替 == 比如 ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[] ==&apos;&apos; //true</span><br><span class="line">[] ==0</span><br><span class="line">0 ==&apos;&apos;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Javascript的基本类型包装对象：字符串，number，布尔，symbol，基本类型是基本类型，基本类型的包装对象是对象</p>
-</li>
-</ol>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/29/JS对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/09/29/JS对象/" itemprop="url">JS对象基础知识</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T22:09:45+08:00">
-                2019-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="JS七大基本数据类型"><a href="#JS七大基本数据类型" class="headerlink" title="JS七大基本数据类型"></a>JS七大基本数据类型</h4><ol>
-<li>四个基本数据类型</li>
-</ol>
-<ul>
-<li>数字    Number</li>
-<li>字符串    String</li>
-<li>Symbol</li>
-<li>布尔类型 boolean</li>
-</ul>
-<ol start="2">
-<li>两个空值</li>
-</ol>
-<ul>
-<li>Nndefined</li>
-<li>Null</li>
-</ul>
-<ol start="3">
-<li>一个对象</li>
-</ol>
-<ul>
-<li>Object <h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><h5 id="对象的创建方法与属性赋值方式-增"><a href="#对象的创建方法与属性赋值方式-增" class="headerlink" title="对象的创建方法与属性赋值方式(增)"></a>对象的创建方法与属性赋值方式(增)</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;<span class="attr">a</span>:<span class="string">'123456'</span>&#125;</span><br><span class="line"><span class="comment">//构造函数创建</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line"><span class="comment">//此时对象是一个空对象</span></span><br><span class="line"><span class="comment">//1.对象里面的key是字符串，添加对象属性, 共有属性只能后读，不能够改共有属性，只能写到自己身上</span></span><br><span class="line">a.x = <span class="string">'xxx'</span><span class="comment">//赋值给空对象 x是字符串</span></span><br><span class="line">a[<span class="string">'xx'</span>] = <span class="string">'ssss'</span><span class="comment">//添加属性 推荐写法，能够明确xx是字符串</span></span><br><span class="line">a[name] = a <span class="comment">//是错误的 name值不确定 </span></span><br><span class="line"><span class="keyword">let</span> name = <span class="string">'xx'</span></span><br><span class="line">a[name] ===a[<span class="string">'xx'</span>] <span class="comment">//相同</span></span><br><span class="line"><span class="comment">//例如 </span></span><br><span class="line"><span class="keyword">let</span> b = <span class="string">'xxx'</span></span><br><span class="line">object.assgin(<span class="string">'目标对象'</span>,<span class="string">'要给对象赋值的值'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="对象属性删除"><a href="#对象属性删除" class="headerlink" title="对象属性删除"></a>对象属性删除</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//delete关键字删除对象属性</span></span><br><span class="line"><span class="keyword">let</span> a = &#123;<span class="string">'a'</span>:<span class="string">'xxx'</span>&#125;</span><br><span class="line"><span class="keyword">delete</span> a[<span class="string">'a'</span>]</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">//a是&#123;&#125;空对象</span></span><br><span class="line"><span class="comment">//delete与 a['a'] =undefined delete是将对象的key与value都删除 a['a'] = undefined是将value变成undefined key还是存在的</span></span><br></pre></td></tr></table></figure>
-<h5 id="对象属性查找"><a href="#对象属性查找" class="headerlink" title="对象属性查找"></a>对象属性查找</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;<span class="attr">s</span>:<span class="number">1</span>,<span class="attr">d</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="built_in">Object</span>.Keys(a)<span class="comment">//['s','d']遍历目标对象的key值，返回一个数组</span></span><br><span class="line"><span class="built_in">Object</span>.Values(a)<span class="comment">//[1,2]遍历对象的value值，返回一个数组 </span></span><br><span class="line"><span class="built_in">Object</span>.entries(a)<span class="comment">//遍历对象的key与value 返回key,value组成的数组</span></span><br></pre></td></tr></table></figure>
-<h5 id="对象属性更改"><a href="#对象属性更改" class="headerlink" title="对象属性更改"></a>对象属性更改</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;<span class="attr">aa</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="built_in">Object</span>.assign(<span class="string">'目标对象'</span>,<span class="string">'要添加的内容属性'</span>)</span><br><span class="line">a[<span class="string">'aa'</span>] = <span class="number">2</span></span><br><span class="line">a.b = <span class="number">222</span></span><br><span class="line"><span class="comment">//JS设计原则，在读取的时候可以读取到共有属性，在对对象属性更改的时候不能直接更改对象的共有属性</span></span><br><span class="line">a.__proto__.toString =<span class="string">'xxx'</span> <span class="comment">//虽然可以改，但是不推荐使用这种方式更改共有属性</span></span><br><span class="line">windows.Object.prototype.toString = <span class="string">'xxx'</span> <span class="comment">//如果需要修改共有属性，使用这种方式修改共有属性</span></span><br><span class="line"><span class="built_in">Object</span>.create(obj)<span class="comment">//直接以obj为原型创建新的对象</span></span><br></pre></td></tr></table></figure>
-<h5 id="其他知识"><a href="#其他知识" class="headerlink" title="其他知识"></a>其他知识</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用 in操作符判断对象是否有某个属性，存在未true，否则为false in操作符不能区分是自身还是原型的属性，使用 hasOwnProperty()确实是自身而不是继承的属性</span></span><br><span class="line"><span class="keyword">let</span> a = &#123;<span class="attr">s</span>:<span class="number">123</span>,<span class="attr">f</span>:<span class="number">321</span>&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="string">'s'</span> <span class="keyword">in</span> a)&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'存在'</span>))</span><br><span class="line">&#125;</span><br><span class="line">a.hasOwnProperty(<span class="string">'s'</span>) <span class="comment">//判断自身是否拥有这个属性</span></span><br><span class="line"><span class="comment">//对象储存在JS内存中的heap区</span></span><br><span class="line"><span class="built_in">console</span>.dir()<span class="comment">//打印出对象的属性，包含共有属性</span></span><br></pre></td></tr></table></figure>
-<h3 id="对象的prototype与proto属性"><a href="#对象的prototype与proto属性" class="headerlink" title="对象的prototype与proto属性"></a>对象的prototype与<strong>proto</strong>属性</h3><ol>
-<li>prototype属性，我们一般讨论构造函数的prototype属性，构造函数的prototype是对象原型</li>
-<li><strong>proto</strong>属性，每一个对象在生成时都会有的隐藏属性<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//prototype与__proto__关系</span></span><br><span class="line"><span class="keyword">let</span> a = &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">a.__proto__ === <span class="built_in">Object</span>.prototype <span class="comment">//true </span></span><br><span class="line">test1.__proto__ <span class="built_in">Function</span>.prototype <span class="comment">//false </span></span><br><span class="line"><span class="comment">//对象.__proto__就等于它的构造函数的原型对象 构造函数.prototype</span></span><br><span class="line"><span class="built_in">Object</span>.__proto__ ===bull <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Function</span>.__proto__ ===<span class="built_in">Function</span>.prototype</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>由prototype与<strong>proto</strong>构建原型链，最终指向NULL</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/29/post,get请求解析/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/09/29/post,get请求解析/" itemprop="url">后台数据与前端进行数据交互</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T22:09:37+08:00">
-                2019-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="后端请求与promise理解"><a href="#后端请求与promise理解" class="headerlink" title="后端请求与promise理解"></a>后端请求与promise理解</h4><ul>
-<li>对于数据库查询函数，将这个数据库方式封装成一个函数，要在外部调用这个函数并且拿到数据库操作的结果（数据库中的数据）</li>
-<li>1.可以使用回调函数 callback，在外部获取想要的结果</li>
-<li>2.可以使用异步 async 操作方法</li>
-<li>3.在外部赋值一个全局变量，然后将 callback 中的值赋值给这个变量，函数外部就可以使用</li>
-<li>4.模板字符串的使用使用 <code>${}</code>可以在其中添加变量例如<code>${msg}</code></li>
-<li>5.node+express 实现添加评论给后台数据，后台数据库返回数据给前台页面<br><code>$.ajax({methods:&#39;&#39;,url:&#39;&#39;,type:&#39;&#39;,data:{},dateType:&#39;&#39;,success:function(){}发送成功后调用方法，可以接受后台传输回来的数据})</code>前端页面使用 ajax 请求 post 方式发送给后台处理，并储存在数据库中</li>
-</ul>
-<hr>
-<ul>
-<li>6.后台要接受到前端传输过来的数据，并且将数据储存在数据库中，在储存完成过后，要发送一个储存数据的信息表示储存成功了. 对于 post 请求，使用<code>使用router.post(&#39;/&#39;,function(req,res){ })</code>post 请求有两个状态一个是<code>req.on(&#39;data&#39;,function(chunk){ data += chunk})</code>用来接收从前台传输过来的数据，并且这个数据是二进制数据。不容易阅读,二是<code>req.on(&#39;end&#39;,function(){})</code>主要是处理二进制数据使用<code>data = querystring.parse(data)</code>将数据解析成对象，随后将 data 中的文本传入数据库操作函数中，将数据插入数据库中</li>
-<li>7.对于 get 请求，使用<code>router.get(&#39;/&#39;,function(req.res){})</code>get 请求的数据都会附着在 url 中传输给后台，在 get 函数中对 url 进行解析 <code>var user = url.parse(req.url, true)</code> 将 url 解析成对象，从 url 对象中获取到想要的数值。user 或者 path</li>
-<li>8.get 请求后也可以获取数据库中的数据，并将数据发送给前端页面，使用<code>在获取数据库函数中加入callback函数，在访问成功数据库中的函数后，调用callback函数。function(err,data){if(err){console.log(err)}else{res.send(data)}}</code></li>
-<li>9.promise ES6 中的 promise 对象。Promise 是一个容器里面保存结束的事件才会操作的结果，主要是可以进行异步操作<br>Promise 对象有 3 中状态，pending(进行中),fulfilled(成功了)，rejected(失败了)，只有异步操作的结果可以决定当前是哪一种状态，其他操作都无法。Promise 是一个构造函数，接受两个参数 function(reslove,reject),resolve 代表成功状态，reject 代表失败状态。<code>const promise = new Promsie(function(resolve,reject){if(&#39;异步成功&#39;){resolve}else{reject(error)}})</code>Promise 实例生成后，可以用 then 方法分别指定 resolve 和 reject 的状态的回调函数，then 可以接受两个函数作为回调函数，分别指定 resolve 的与 reject 的回调函数</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/29/数据库的使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/09/29/数据库的使用/" itemprop="url">配置Vue项目上线</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T22:09:30+08:00">
-                2019-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="node-nginx-mongodb-mongose"><a href="#node-nginx-mongodb-mongose" class="headerlink" title="node nginx mongodb mongose"></a>node nginx mongodb mongose</h4><ul>
-<li>1.在 node 中建立新路由时，新的路由要在 index.js 主文件进行注册, 并且新路由文件要 module.exports = router 暴露路由</li>
-<li>2.POST 接受前台传输数据，在 node 后端处理，要经过两个 post 事件，接受数据并使用 querystring 处理数据。post(‘/‘,function(req,res){req.on(‘date’),req.on(‘end’)})date 事件是接受数据(二进制数据),end 事件是处理接受到的数据，解析成为一个对象 or 字符串。</li>
-<li>3.在 node+express 中使用路由，路由规则就是注册一个 router.get(‘/router’,function(req,res){}),路由一般用于页面的跳转和重定向</li>
-<li>4.在前端向后端发送数据请求，等待后端验证后，前端在进行跳转时，可以使用回调，在请求数据成功后，后端进行判断然后可以返回一个 reponse，在 ajax 中的 success 属性中接受到这个属性，并作出相应的跳转 or 提示处理</li>
-<li>5.学习了 Promise 与回调函数。事件的异步方式</li>
-<li>6.在 liunx 中配置 node,npm,nginx,mongodb 数据库<br>下载命令 apt-get node 或者使用下载压缩包命令 wget <a href="http://nodejs.org/dist/v0.8.9/node-v0.8.9.tar.gz" target="_blank" rel="noopener">http://nodejs.org/dist/v0.8.9/node-v0.8.9.tar.gz</a> 使用 tar zxvf 命令解压压缩包，完成后输入 node-v 是否出现 node 版本<br>node 安装完成后可以使用 npm 命令，安装 express 框架 npm install express -g<br>如果出现 apt-get 报错，可以尝试使用 apt-get update 更新一下源<br>安装 nginx，直接安装就可以了，主要是配置文件的更改，在 http 中的 server 下改变你的 ESC 实例网址，和端口。<br>在外面访问不到的情况下，是 ESC 实例没有配置安全组。配置完成后，访问。会出现 nginx 欢迎你的界面。<br>nginx 配置的代理服务器，将 location / {<br>proxy_pass <a href="http://127.0.0.1:3000;3000就是你的node项目的端口号" target="_blank" rel="noopener">http://127.0.0.1:3000;3000就是你的node项目的端口号</a><br>}<br>mongodb 安装。主要是配置文件的添加。mongodb.conf,添加端口号(port),数据库路径 dbpath=”” 日志路径 logpath=”” 设置后台运行 f ork=true logappend = true 设置日志的输出方式<br>使用 mp2 管理 node 项目的进程</li>
-<li>7.学到的 liunx 命令<ol>
-<li>cd 命令，打开文件 cd 文件名 cd ..返回上一个目录</li>
-<li>kill -9 ‘进程’ 杀死进程</li>
-<li>ps aux |grep nginx 查询程序进程</li>
-<li>whereis 命令 查询文件存在的目录位置</li>
-<li>top 命令 查询所有的进程</li>
-<li>vim 文件名 使用 vim 编辑器打开一个文件，esc 按钮退出然后 :wq 是退出并保存文件</li>
-<li>find 命令，查找文件</li>
-<li>mv 命令是 move 命令，是更改文件名或者将文件的内容复制到另一个文件中</li>
-<li>mkdir 命令，创建一个文件夹</li>
-<li>liunx 下运行 mongodb 数据库。在 mongodb 安装目录下运行 ./mongod –config ../mongodb.conf，以配置文件启动启动服务端 mongodb<br>运行 ./mongo –port=27899，以端口启动客户端 ,关闭配置文件中的 auth 属性就可以</li>
-</ol>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/29/Vue,node服务部署/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/09/29/Vue,node服务部署/" itemprop="url">Vue与node项目部署 JS-sdk配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T22:09:28+08:00">
-                2019-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>Vue项目在本地开发需要运行 npm run dev ，部署上线使用 npm build 打包成dist文件直接部署在nginx上直接访问</p>
-<ol>
-<li>需要更改 config文件夹中的index.js文件 更改build中的配置路径/=&gt;./</li>
-<li>nginx 配置静态文件访问路径就可以</li>
-<li><p>跨域问题 使用nginx代理</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">upstream weixin &#123;</span><br><span class="line">	server <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8081</span>;</span><br><span class="line">&#125;</span><br><span class="line">location / &#123;</span><br><span class="line">	proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">   	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">   	proxy_set_header Host  $http_host;</span><br><span class="line">   	proxy_set_header X-Nginx-<span class="built_in">Proxy</span> <span class="literal">true</span>;</span><br><span class="line">   	proxy_set_header Connection <span class="string">""</span>;</span><br><span class="line">   	proxy_pass http:<span class="comment">//weixin;  设置代理接口解决跨域</span></span><br><span class="line">	root /home/webapp/;</span><br><span class="line">	index index.html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>4.nginx负载均衡就是配置多个服务器ip，分发给不同ip服务器，达到负载均衡效果</p>
-</li>
-</ol>
-</li>
-<li><p>微信JS-sdk配置</p>
-<ol>
-<li>验证token  搭建一个服务端，用于在微信公众号平台填写url后，接受微信官方发送的一个get请求，获得请求参数后，使用sha1算法验证后，与结果比较，相同后，res.send(nonce)参数配置url成功</li>
-<li>配置IP白名单，获得appid与secret 发送get请求，携带这两个参数到    <a href="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=wx5619bb7ab5609e80&amp;secret=d93c13ed03aa51fd0cf43d814b943b87，会受到一个状态码和一个access_token.在获取token后在请求接口https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=%27%20+%20access_token%20+%20%27&amp;type=jsapi" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=wx5619bb7ab5609e80&amp;secret=d93c13ed03aa51fd0cf43d814b943b87，会受到一个状态码和一个access_token.在获取token后在请求接口https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=%27%20+%20access_token%20+%20%27&amp;type=jsapi</a>    接受返回的getticket票据</li>
-<li>获取票据后，使用填写的字符串 时间戳new Data().getTime()/1000 然后取整</li>
-<li>拼接字符串票据将字符串拼接起来 ‘jsapi_ticket=’ + jsapi_ticket + ‘&amp;noncestr=’ + noncestr + ‘&amp;timestamp=’ + timestamp + ‘&amp;url=’ + url</li>
-<li>得到一个str 使用str在使用sha1()算法加密将加密后的数据，res发送给前端页面</li>
-<li>引入后前端页面引入的js文件会检测sign签名是否相同，相同则配置成功，可以使用微信开发者工具验证</li>
-</ol>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0730chen.github.io/0730chen.github.io/2019/09/29/轮播图/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="前端">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/0730chen.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/0730chen.github.io/2019/09/29/轮播图/" itemprop="url">轮播图原理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T22:09:20+08:00">
-                2019-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="实现轮播图"><a href="#实现轮播图" class="headerlink" title="实现轮播图"></a>实现轮播图</h3><ol>
-<li><p>前提准备<br> 轮播图容器HTML</p>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"imglist"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>存放图片的标签<span class="tag">&lt;/<span class="name">li</span>&gt;</span>&gt;</span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>存放图片<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"wrap-bar"</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-id</span>=<span class="string">"0"</span>&gt;</span>0<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-id</span>=<span class="string">"1"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-id</span>=<span class="string">"2"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-id</span>=<span class="string">"3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
- <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Css是使用父相子绝定位 子元素相对于父元素绝对定位*/</span></span><br><span class="line"><span class="comment">/*要显示的一张图片大小*/</span></span><br><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">	<span class="attribute">position</span>:relative;</span><br><span class="line">	<span class="attribute">width</span>:<span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">height</span>:<span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">overflow</span>:hidden;<span class="comment">/*超过部分隐藏*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*子容器添加所有的图片，横排排放*/</span></span><br><span class="line"><span class="selector-class">.imglist</span>&#123;</span><br><span class="line">	<span class="attribute">position</span>:absolute;</span><br><span class="line">	<span class="attribute">width</span>:<span class="number">2500px</span>;</span><br><span class="line">	<span class="attribute">height</span>:<span class="number">500px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">img</span>&#123;</span><br><span class="line">	<span class="attribute">max-width</span>:<span class="number">100%</span>;<span class="comment">/*防止图片变形*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>控制图片显示隐藏<ul>
-<li>控制子容器的left值，移动相应的px就可以显示不同的图片<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//获取元素</span></span><br><span class="line"> <span class="keyword">let</span> container = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'container'</span>)</span><br><span class="line"> <span class="keyword">let</span> n = <span class="number">0</span> <span class="comment">//设置初始值</span></span><br><span class="line"> <span class="comment">//定义一个函数</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">athoplay</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">	  n = n+<span class="number">1</span></span><br><span class="line">	  <span class="comment">//3是图片的数量</span></span><br><span class="line">	  <span class="keyword">if</span>(n&lt;<span class="number">3</span>)&#123;</span><br><span class="line">		  container[<span class="number">0</span>].style.left = <span class="string">'图片尺寸'</span>*n+<span class="string">'px'</span><span class="comment">//移动图片尺寸的px值</span></span><br><span class="line">		  <span class="comment">//在调用函数</span></span><br><span class="line">		  autoplay()</span><br><span class="line">	  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		  n = <span class="number">0</span>;</span><br><span class="line">		container[<span class="number">0</span>].style.left = <span class="number">0</span><span class="comment">//移动图片尺寸的解决了会出现空白界面的问题</span></span><br><span class="line">	  &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//将圆点下标同步到对应的图片位置上</span></span><br><span class="line"> <span class="keyword">let</span> index = <span class="number">0</span> <span class="comment">//新建一个索引值 ，将索引与图片联系起来</span></span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">clicktab</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> litab = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'wrap-bar'</span>)</span><br><span class="line">      litab[<span class="number">0</span>].addEventListener(<span class="string">'click'</span>, e =&gt; &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(e.target.dataset.id)</span><br><span class="line">          <span class="keyword">let</span> setpIndex = e.target.dataset.id</span><br><span class="line">          <span class="keyword">if</span> (setpIndex = <span class="string">'0'</span>) &#123;</span><br><span class="line">              imgItem[<span class="number">0</span>].style.left = <span class="number">-1024</span> * setpIndex + <span class="string">'px'</span></span><br><span class="line">          &#125;</span><br><span class="line">	<span class="comment">//....判断全部的图片，点击圆点移动对应的距离显示不同的图片</span></span><br><span class="line">      &#125;)</span><br><span class="line"><span class="comment">//懒加载原理是将img中的src先赋值，在用户访问后，使用JS给src赋值</span></span><br><span class="line"><span class="keyword">let</span> img = <span class="keyword">new</span> Image()</span><br><span class="line"><span class="keyword">let</span> srcList = [<span class="string">'/1.jpg'</span>,<span class="string">'/2.jpg'</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>;i&lt;srcList.length;i++)&#123;</span><br><span class="line">	img.src = srcList[i]</span><br><span class="line">&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1702,7 +1684,7 @@ ES是规则是JavaScript的标准规则，他两之间不是包含关系
               
                 <a href="/0730chen.github.io/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1724,7 +1706,7 @@ ES是规则是JavaScript的标准规则，他两之间不是包含关系
               
               <div class="site-state-item site-state-tags">
                 <a href="/0730chen.github.io/tags/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

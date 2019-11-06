@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Jquery常用API操作 获取元素  123456789101112131415//首先需要在script标签中引入jquery链接//&amp;lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.slim.min.js&quot; integrity=&quot;sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfR">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-28T16:41:26.321Z">
+<meta property="og:updated_time" content="2019-10-30T15:05:23.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jquery常用api使用教程">
 <meta name="twitter:description" content="Jquery常用API操作 获取元素  123456789101112131415//首先需要在script标签中引入jquery链接//&amp;lt;script src=&quot;https://code.jquery.com/jquery-3.3.1.slim.min.js&quot; integrity=&quot;sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfR">
@@ -349,7 +349,18 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加类名</span></span><br><span class="line">$(<span class="string">'.class'</span>).addClass(<span class="string">'xx'</span>)<span class="comment">//xx是需要添加的类名</span></span><br><span class="line">hasClass()<span class="comment">//判断是否存在某个类</span></span><br><span class="line">removeclass()<span class="comment">//移除类</span></span><br><span class="line">toggleClass()<span class="comment">//如果存在这个类则移除，不存在则填加</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//复制一个元素</span></span><br><span class="line">$().clone()<span class="comment">//复制一个你选中的元素</span></span><br><span class="line"><span class="comment">//元素删除</span></span><br><span class="line">$().remove() or .detach()</span><br><span class="line"><span class="comment">//remove于detach区别，remove不保留删除元素</span></span><br><span class="line"><span class="comment">//清空元素内容，但是不删除元素</span></span><br><span class="line">$().empty()</span><br><span class="line"><span class="comment">//添加html</span></span><br><span class="line">$().append(<span class="string">'b'</span>)<span class="comment">//在每个匹配元素里面的末尾处插入参数内容</span></span><br><span class="line">$().appendTo(<span class="string">'a'</span>)<span class="comment">//将匹配的元素插入到目标元素的最后面</span></span><br><span class="line"><span class="comment">//两个区别是 append后面是要插入的元素，appendTo后面选择要被插入的元素，前面是要插入的元素</span></span><br><span class="line"><span class="comment">//不带参数就是获取内容，带参数就是设置内容。重载</span></span><br><span class="line">$().html()<span class="comment">//获取html文本内容  </span></span><br><span class="line">$().text()<span class="comment">//获取标签的文本内容</span></span><br><span class="line">$().after()</span><br><span class="line">$().before()</span><br><span class="line">$().insertAfter()</span><br><span class="line">$().insertBefore()</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取css属性</span></span><br><span class="line"><span class="comment">//有参数为设置，不带参数为获取</span></span><br><span class="line">$().css()</span><br><span class="line">$().height()</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>链式操作<br>这是Jquery最为优秀的设计思想</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在选择操作后后续可以继续进行操作</span></span><br><span class="line">$().addClass().removeClass().end()<span class="comment">//ends 退回到上一次的状态</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在选择操作后后续可以继续进行操作</span></span><br><span class="line">$().addClass().removeClass().end()<span class="comment">//ends 退回到上一次的状态</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Jquery的优势部分</p>
+<ul>
+<li>可以不使用new操作符就可以创建对象，Jquery对象</li>
+<li>函数重载，根据参数不同，有不同作用</li>
+<li>使用闭包隐藏细节，外部只能使用api文档进行操作</li>
+<li>getter/setter设计模式 只读，只写</li>
+<li>别名，可以使用$符号代替Jquery</li>
+<li>适配器 可以使用在不同环境中</li>
+</ul>
+</li>
 </ol>
 
       
@@ -390,6 +401,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/0730chen.github.io/2019/10/29/ajax/" rel="prev" title="Ajax基础知识及原理">
+                Ajax基础知识及原理 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -466,7 +481,7 @@
               
                 <a href="/0730chen.github.io/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -488,7 +503,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/0730chen.github.io/tags/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
